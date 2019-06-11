@@ -1,15 +1,16 @@
 import React from 'react';
-import Countdown from '../components/countdown';
+import Countdown from '../../components/countdown';
 import { Query } from 'react-apollo';
-import upcomingLaunch from '../graphql/queries/upcomingLaunch';
+import upcomingLaunch from '../../graphql/queries/upcomingLaunch';
 import styled from 'styled-components';
+import { Spinner } from 'react-bootstrap';
 
 const Homepage = () => {
   return (
     <HomepageStyle>
       <Query query={upcomingLaunch}>
         {({ loading, error, data }) => {
-          if (loading) return <p>Loading...</p>;
+          if (loading) return <Spinner animation="border" variant="primary" />;
           if (error) return <span>`Error! ${error.message}`</span>;
           return <Countdown data={data} />;
         }}

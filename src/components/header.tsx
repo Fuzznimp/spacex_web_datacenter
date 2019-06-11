@@ -8,6 +8,8 @@ const Header = () => {
       <h1>SpaceX Data Center</h1>
       <NavbarLinks>
         <Link to="/">Home</Link>
+        <Link to="/Future">Future</Link>
+        <Link to="/Past">Past</Link>
         <Link to="/about">About</Link>
       </NavbarLinks>
     </Navbar>

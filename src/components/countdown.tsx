@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Button, Fade } from 'react-bootstrap';
-import downArrow from '../assets/down-arrow.svg';
 
 interface latestLaunchDate {
   data: object;
@@ -126,6 +125,9 @@ const CountdownStyle = styled.div`
 
 const CardStyle = styled.div`
   width: 300px;
+  p {
+
+  }
 `;
 
 const UpcomingLaunchStyle = styled.div`
