@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import moment from 'moment';
+import { Button, Fade } from 'react-bootstrap';
+import downArrow from '../assets/down-arrow.svg';
 
 interface latestLaunchDate {
   data: object;
 }
 
-interface date {
+interface state {
   now: number;
+  isOpen: boolean;
 }
 
-class Countdown extends Component<latestLaunchDate, date> {
+class Countdown extends Component<latestLaunchDate, state> {
   constructor(props) {
     super(props);
     this.state = {
-      now: Math.floor(Date.now() / 1000)
+      now: Math.floor(Date.now() / 1000),
+      isOpen: false
     };
   }
   interval = 0;
@@ -37,8 +40,12 @@ class Countdown extends Component<latestLaunchDate, date> {
     const missionName = launch.mission_name;
     const rocketName = launch.rocket.rocket_name;
     const launchSiteName = launch.launch_site.site_name;
+    const missionDetails = launch.details;
+    const missionPatch = launch.links.mission_patch;
 
-    const delta = Math.floor(latestLaunch - this.state.now);
+    const { isOpen, now } = this.state;
+
+    const delta = Math.floor(latestLaunch - now);
     const seconds = delta % 60;
     const minutes = Math.floor(delta / 60) % 60;
     const hours = Math.floor(delta / 3600) % 24;
@@ -77,6 +84,18 @@ class Countdown extends Component<latestLaunchDate, date> {
             <span>seconds</span>
           </CardStyle>
         </CountdownStyle>
+        <Button
+          onClick={() => this.setState({ isOpen: !isOpen })}
+          aria-controls="mission-info"
+          aria-expanded={isOpen}>
+          Details
+        </Button>
+        <Fade in={isOpen}>
+          <CollapseInfo id="mission-info">
+            {missionPatch && <img src={missionPatch} alt="Mission Patch" />}
+            <div>{missionDetails}</div>
+          </CollapseInfo>
+        </Fade>
       </UpcomingLaunchStyle>
     );
   }
@@ -89,6 +108,7 @@ const CountdownStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
   p {
     font-size: 10rem;
     margin: 0;
@@ -115,4 +135,12 @@ const UpcomingLaunchStyle = styled.div`
 const LaunchInfos = styled.div`
   display: flex;
   justify-content: center;
+`;
+
+const CollapseInfo = styled.div`
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 60%;
+  display: flex;
+  justify-content: space-between
 `;

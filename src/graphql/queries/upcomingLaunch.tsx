@@ -13,6 +13,9 @@ const upcomingLaunch = gql`
       launch_site {
         site_name
       }
+      links {
+        mission_patch
+      }
     }
   }
 `;

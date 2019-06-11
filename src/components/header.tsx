@@ -18,7 +18,7 @@ export default Header;
 
 //Style
 const Navbar = styled.div`
-  padding-top: 16px;
+  padding-top: 50px;
   h1 {
     margin: 10px 0 !important;
     font-size: 5rem;
@@ -37,7 +37,7 @@ const NavbarLinks = styled.div`
     font-size: 1.25rem;
     transition: 0.3s;
     &:hover {
-      color: #118943;
+      color: #007bff;
     }
   }
 `;
