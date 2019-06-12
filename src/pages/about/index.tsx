@@ -8,12 +8,14 @@ const About = () => {
       <GithubLink>
         <a
           href="https://github.com/Fuzznimp/spacex_web_datacenter"
-          target="_blank">
+          target="_blank"
+          rel="noopener noreferrer">
           <i className="fab fa-github-square" />
         </a>
         <a
           href="https://www.linkedin.com/in/anthony-montaigne-abb210176/"
-          target="_blank">
+          target="_blank"
+          rel="noopener noreferrer">
           <i className="fab fa-linkedin" />
         </a>
       </GithubLink>

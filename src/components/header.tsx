@@ -11,7 +11,12 @@ const Header = () => {
         <Link to="/">Home</Link>
         <Link to="/Future">Future</Link>
         <Link to="/Past">Past</Link>
-        <a href="https://www.spacex.com/webcast" target="_blank">Livestream</a>
+        <a
+          href="https://www.spacex.com/webcast"
+          target="_blank"
+          rel="noopener noreferrer">
+          Livestream
+        </a>
         <Link to="/about">About</Link>
         <i className="fas fa-space-shuttle left" />
       </NavbarLinks>
