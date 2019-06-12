@@ -47,6 +47,10 @@ const AboutContainer = styled.div`
       color: #007bff;
     }
   }
+  @media (max-width: 767px) {
+    /* smartphone */
+    margin: 30px;
+  }
 `;
 
 const GithubLink = styled.div`
