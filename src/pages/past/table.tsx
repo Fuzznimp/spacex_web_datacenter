@@ -5,58 +5,62 @@ import React from 'react';
 import Td from './td';
 import TdDate from './tdDate';
 import TdPatch from './tdPatch';
-import Countdown from './countdown';
+import TdLanding from './tdLanding';
+import TdLaunch from './tdLaunch';
 
 interface Props {
   data: object;
 }
 
-const FutureTable: React.FunctionComponent<Props> = props => {
+const PastTable: React.FunctionComponent<Props> = props => {
   const { data }: { data: any } = props;
 
   return (
-    <FutureTableStyle>
-      <h2>Future Missions</h2>
+    <PastTableStyle>
+      <h2>Past Missions</h2>
       <Table responsive>
         <thead>
           <tr>
             <th>#</th>
-            <th>
-              <CountdownLegend>(days:hours:mins:secs)</CountdownLegend>
-              Countdown
-            </th>
+            <th>Patch</th>
             <th>
               <CountdownLegend>(UTC+0200)</CountdownLegend>
-              Date/Time
+              Date
             </th>
             <th>Name</th>
             <th>Rocket</th>
             <th>Site</th>
-            <th>Patch</th>
+            <th>Launch</th>
+            <th>Landing</th>
           </tr>
         </thead>
         <tbody>
           {data.launches.map(launch => (
             <tr key={launch.flight_number}>
               <Td data={launch.flight_number} />
-              <Countdown data={launch.launch_date_unix} />
+              <TdPatch data={launch.links.mission_patch_small} />
               <TdDate data={launch.launch_date_utc} />
               <Td data={launch.mission_name} />
               <Td data={launch.rocket.rocket_name} />
               <Td data={launch.launch_site.site_name} />
-              <TdPatch data={launch.links.mission_patch_small} />
+              <TdLaunch
+                data={launch.launch_success}
+              />
+              <TdLanding
+                data={launch.rocket.first_stage.cores[0].land_success}
+              />
             </tr>
           ))}
         </tbody>
       </Table>
-    </FutureTableStyle>
+    </PastTableStyle>
   );
 };
 
-export default FutureTable;
+export default PastTable;
 
 // Style
-const FutureTableStyle = styled.div`
+const PastTableStyle = styled.div`
   margin: 5% auto;
   width: 80%;
   table {

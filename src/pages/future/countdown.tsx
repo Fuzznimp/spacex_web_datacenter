@@ -32,7 +32,6 @@ class Countdown extends Component<launchDate, countdownState> {
 
   render() {
     const { data } = this.props;
-    console.log(data);
     const { now } = this.state;
     const delta = Math.floor(data - now);
     const seconds = delta % 60;

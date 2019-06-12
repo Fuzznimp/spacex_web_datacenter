@@ -14,7 +14,7 @@ const TdPatch: React.FunctionComponent<Props> = props => {
       </a>
     </TdPatchStyle>
   ) : (
-    <td>TBD</td>
+    <td>NONE</td>
   );
 };
 
