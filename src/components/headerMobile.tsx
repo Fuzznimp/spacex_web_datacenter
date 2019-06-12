@@ -31,8 +31,8 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
 
   render() {
     const modalBody = {
-      backgroundColor: "black",
-    }
+      backgroundColor: 'black'
+    };
     return (
       <Navbar>
         <h1>SpaceX Data Center</h1>
@@ -41,7 +41,13 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
           <p>Navigation</p>
           <i className="fas fa-space-shuttle left" />
         </NavBtn>
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal
+          show={this.state.show}
+          onHide={this.handleClose}
+          {...this.props}
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered>
           <Modal.Body style={modalBody}>
             <NavbarLinks>
               <Link to="/">Home</Link>
