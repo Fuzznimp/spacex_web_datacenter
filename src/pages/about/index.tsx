@@ -4,7 +4,8 @@ import styled from 'styled-components';
 const About = () => {
   return (
     <AboutContainer>
-      <h2>Developed and maintained by Anthony Montaigne</h2>
+      <h2>Developed and maintained by</h2>
+      <h2>Anthony Montaigne</h2>
       <GithubLink>
         <a
           href="https://github.com/Fuzznimp/spacex_web_datacenter"
