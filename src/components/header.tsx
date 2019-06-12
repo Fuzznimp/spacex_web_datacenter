@@ -7,20 +7,20 @@ const Header = () => {
     <Navbar>
       <h1>SpaceX Data Center</h1>
       <NavbarLinks>
-        <i className="fas fa-space-shuttle" />
-        <Link to="/">Home</Link>
-        <Link to="/Future">Future</Link>
-        <Link to="/Past">Past</Link>
-        <a
-          href="https://www.spacex.com/webcast"
-          target="_blank"
-          rel="noopener noreferrer">
-          Livestream
-        </a>
-        <Link to="/rockets">Rockets</Link>
-        <Link to="/event">History</Link>
-        <Link to="/about">About</Link>
-        <i className="fas fa-space-shuttle left" />
+          <i className="fas fa-space-shuttle" />
+          <Link to="/">Home</Link>
+          <Link to="/Future">Future</Link>
+          <Link to="/Past">Past</Link>
+          <a
+            href="https://www.spacex.com/webcast"
+            target="_blank"
+            rel="noopener noreferrer">
+            Livestream
+          </a>
+          <Link to="/rockets">Rockets</Link>
+          <Link to="/event">History</Link>
+          <Link to="/about">About</Link>
+          <i className="fas fa-space-shuttle left" />
       </NavbarLinks>
     </Navbar>
   );
@@ -68,5 +68,8 @@ const NavbarLinks = styled.div`
     -ms-transform: rotateY(180deg);
     unicode-bidi: bidi-override;
     direction: rtl;
+  }
+  @media (max-width: 967px) {
+    padding: 0 50px;
   }
 `;
