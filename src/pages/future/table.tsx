@@ -59,9 +59,17 @@ export default FutureTable;
 const FutureTableStyle = styled.div`
   margin: 5% auto;
   width: 80%;
+  table {
+    overflow: hidden;
+  }
   th,
   td {
     color: white;
+    border-top: 0;
+  }
+  tbody {
+    overflow: scroll;
+    height: 40%;
   }
 `;
 
