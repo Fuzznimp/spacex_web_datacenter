@@ -130,9 +130,11 @@ const CountdownStyle = styled.div`
 `;
 
 const InfoCardStyle = styled.div`
-  width: 300px;
+  width: 200px;
   @media (max-width: 767px) {
     /* smartphone */
+    width: 100px;
+
     p {
       font-size: 0.75rem;
     }
@@ -153,7 +155,7 @@ const CountdownCardStyle = styled.div`
   @media (max-width: 767px) {
     /* smartphone */
     p {
-      font-size: 3rem;
+      font-size: 2rem;
       margin: 0 10px;
     }
   }
