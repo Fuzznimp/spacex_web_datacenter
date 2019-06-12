@@ -6,7 +6,7 @@ const About = () => {
     <div>
       <h2>Hello</h2>
       <GithubLink>
-        <a href="https://github.com/Fuzznimp/spacex_web_datacenter">
+        <a href="https://github.com/Fuzznimp/spacex_web_datacenter" target="_blank">
           <i className="fab fa-github" />
         </a>
       </GithubLink>
