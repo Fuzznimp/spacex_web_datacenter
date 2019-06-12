@@ -8,6 +8,7 @@ const About = () => {
       <GithubLink>
         <a href="https://github.com/Fuzznimp/spacex_web_datacenter">
           <i className="fab fa-github" />
+          RADAR, LE FILS DU COUTELAS
         </a>
       </GithubLink>
     </div>
@@ -17,7 +18,6 @@ const About = () => {
 export default About;
 
 // Style
-
 const GithubLink = styled.div`
   font-size: 100px;
   a {
