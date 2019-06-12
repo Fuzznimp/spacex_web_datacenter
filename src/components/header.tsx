@@ -36,12 +36,20 @@ const Navbar = styled.div`
     font-size: 5rem;
     letter-spacing: 8px;
   }
+  @media (max-width: 767px) {
+    /* smartphone */
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 5px;
+    }
+  }
 `;
 
 const NavbarLinks = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: scroll;
   a {
     margin: 0 8px;
     color: white;

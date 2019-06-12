@@ -52,36 +52,36 @@ class Countdown extends Component<latestLaunchDate, countdownState> {
     return (
       <UpcomingLaunchStyle>
         <LaunchInfos>
-          <CardStyle>
+          <InfoCardStyle>
             <p>Mission Name</p>
             <h2>{missionName}</h2>
-          </CardStyle>
-          <CardStyle>
+          </InfoCardStyle>
+          <InfoCardStyle>
             <p>Rocket Name</p>
             <h2>{rocketName}</h2>
-          </CardStyle>
-          <CardStyle>
+          </InfoCardStyle>
+          <InfoCardStyle>
             <p>Launch Site Name</p>
             <h2>{launchSiteName}</h2>
-          </CardStyle>
+          </InfoCardStyle>
         </LaunchInfos>
         <CountdownStyle>
-          <CardStyle>
+          <CountdownCardStyle>
             <p>{String(days).padStart(2, '0')}</p>
             <span>days</span>
-          </CardStyle>
-          <CardStyle>
+          </CountdownCardStyle>
+          <CountdownCardStyle>
             <p>{String(hours % 24).padStart(2, '0')}</p>
             <span>hours</span>
-          </CardStyle>
-          <CardStyle>
+          </CountdownCardStyle>
+          <CountdownCardStyle>
             <p>{String(minutes % 60).padStart(2, '0')}</p>
             <span>minutes</span>
-          </CardStyle>
-          <CardStyle>
+          </CountdownCardStyle>
+          <CountdownCardStyle>
             <p>{String(seconds % 60).padStart(2, '0')}</p>
             <span>seconds</span>
-          </CardStyle>
+          </CountdownCardStyle>
         </CountdownStyle>
         <i
           onClick={() => this.setState({ isOpen: !isOpen })}
@@ -120,8 +120,8 @@ const CountdownStyle = styled.div`
     @media (max-width: 1200px) {
       font-size: 10vh;
     }
-    @media (max-width: 600px) {
-      font-size: 3rem;
+    @media (max-width: 767px) {
+      font-size: 3vh;
     }
   }
   @media (max-width: 1200px) {
@@ -129,9 +129,33 @@ const CountdownStyle = styled.div`
   }
 `;
 
-const CardStyle = styled.div`
+const InfoCardStyle = styled.div`
   width: 300px;
-  p {
+  @media (max-width: 767px) {
+    /* smartphone */
+    p {
+      font-size: 0.75rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+    }
+  }
+`;
+
+const CountdownCardStyle = styled.div`
+  width: 300px;
+  @media (max-width: 1200px) {
+    /* smartphone */
+    p {
+      margin: 0 10px;
+    }
+  }
+  @media (max-width: 767px) {
+    /* smartphone */
+    p {
+      font-size: 4rem;
+      margin: 0 10px;
+    }
   }
 `;
 
