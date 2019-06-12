@@ -91,7 +91,13 @@ class Countdown extends Component<latestLaunchDate, countdownState> {
         />
         <Fade in={isOpen}>
           <CollapseInfo id="mission-info">
-            {missionPatch && <img src={missionPatch} alt="Mission Patch" className="patch-mission" />}
+            {missionPatch && (
+              <img
+                src={missionPatch}
+                alt="Mission Patch"
+                className="patch-mission"
+              />
+            )}
             <div>{missionDetails}</div>
           </CollapseInfo>
         </Fade>
@@ -134,6 +140,10 @@ const UpcomingLaunchStyle = styled.div`
   i {
     font-size: 50px;
     cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      color: #007bff;
+    }
   }
 `;
 
