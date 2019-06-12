@@ -7,10 +7,12 @@ const Header = () => {
     <Navbar>
       <h1>SpaceX Data Center</h1>
       <NavbarLinks>
+        <i className="fas fa-space-shuttle" />
         <Link to="/">Home</Link>
         <Link to="/Future">Future</Link>
         <Link to="/Past">Past</Link>
         <Link to="/about">About</Link>
+        <i className="fas fa-space-shuttle left" />
       </NavbarLinks>
     </Navbar>
   );
@@ -41,5 +43,13 @@ const NavbarLinks = styled.div`
     &:hover {
       color: #007bff;
     }
+  }
+  .left {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    unicode-bidi: bidi-override;
+    direction: rtl;
   }
 `;

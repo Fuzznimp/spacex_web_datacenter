@@ -6,12 +6,12 @@ interface latestLaunchDate {
   data: object;
 }
 
-interface state {
+interface countdownState {
   now: number;
   isOpen: boolean;
 }
 
-class Countdown extends Component<latestLaunchDate, state> {
+class Countdown extends Component<latestLaunchDate, countdownState> {
   constructor(props) {
     super(props);
     this.state = {
@@ -83,15 +83,15 @@ class Countdown extends Component<latestLaunchDate, state> {
             <span>seconds</span>
           </CardStyle>
         </CountdownStyle>
-        <Button
+        <i
           onClick={() => this.setState({ isOpen: !isOpen })}
           aria-controls="mission-info"
-          aria-expanded={isOpen}>
-          Details
-        </Button>
+          aria-expanded={isOpen}
+          className="fas fa-meteor"
+        />
         <Fade in={isOpen}>
           <CollapseInfo id="mission-info">
-            {missionPatch && <img src={missionPatch} alt="Mission Patch" />}
+            {missionPatch && <img src={missionPatch} alt="Mission Patch" className="patch-mission" />}
             <div>{missionDetails}</div>
           </CollapseInfo>
         </Fade>
@@ -126,12 +126,15 @@ const CountdownStyle = styled.div`
 const CardStyle = styled.div`
   width: 300px;
   p {
-
   }
 `;
 
 const UpcomingLaunchStyle = styled.div`
   padding-top: 5%;
+  i {
+    font-size: 50px;
+    cursor: pointer;
+  }
 `;
 
 const LaunchInfos = styled.div`
@@ -144,5 +147,9 @@ const CollapseInfo = styled.div`
   margin-top: 20px;
   width: 60%;
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+  .patch-mission {
+    height: 130px;
+    margin-right: 40px;
+  }
 `;
