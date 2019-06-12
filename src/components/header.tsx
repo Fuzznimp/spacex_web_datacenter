@@ -61,6 +61,7 @@ const NavbarLinks = styled.div`
     }
   }
   .left {
+    transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
