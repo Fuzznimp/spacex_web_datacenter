@@ -153,7 +153,7 @@ const CountdownCardStyle = styled.div`
   @media (max-width: 767px) {
     /* smartphone */
     p {
-      font-size: 4rem;
+      font-size: 3rem;
       margin: 0 10px;
     }
   }
