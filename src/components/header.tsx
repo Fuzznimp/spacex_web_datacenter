@@ -18,7 +18,7 @@ const Header = () => {
             Livestream
           </a>
           <Link to="/rockets">Rockets</Link>
-          <Link to="/event">History</Link>
+          <Link to="/history">History</Link>
           <Link to="/about">About</Link>
           <i className="fas fa-space-shuttle left" />
       </NavbarLinks>
