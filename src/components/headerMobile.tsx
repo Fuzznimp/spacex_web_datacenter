@@ -50,18 +50,31 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
           centered>
           <Modal.Body style={modalBody}>
             <NavbarLinks>
-              <Link to="/">Home</Link>
-              <Link to="/Future">Future</Link>
-              <Link to="/Past">Past</Link>
+              <Link to="/" onClick={this.handleClose}>
+                Home
+              </Link>
+              <Link to="/Future" onClick={this.handleClose}>
+                Future
+              </Link>
+              <Link to="/Past" onClick={this.handleClose}>
+                Past
+              </Link>
               <a
                 href="https://www.spacex.com/webcast"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+                onClick={this.handleClose}>
                 Livestream
               </a>
-              <Link to="/rockets">Rockets</Link>
-              <Link to="/history">History</Link>
-              <Link to="/about">About</Link>
+              <Link to="/rockets" onClick={this.handleClose}>
+                Rockets
+              </Link>
+              <Link to="/history" onClick={this.handleClose}>
+                History
+              </Link>
+              <Link to="/about" onClick={this.handleClose}>
+                About
+              </Link>
             </NavbarLinks>
           </Modal.Body>
         </Modal>
