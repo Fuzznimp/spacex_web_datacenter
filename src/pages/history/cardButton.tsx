@@ -14,11 +14,11 @@ const CardButton: React.FunctionComponent<Props> = props => {
   let fontawesome;
 
   if (data.match(redditRegex)) {
-    fontawesome = <i className="fab fa-reddit-square" />;
+    fontawesome = <i className="fab fa-reddit-alien" />;
   } else if (data.match(wikiRegex)) {
     fontawesome = <i className="fab fa-wikipedia-w" />;
   } else {
-    fontawesome = <i className="fas fa-newspaper" />;
+    fontawesome = <i className="fas fa-rocket" />;
   }
 
   return (
@@ -39,5 +39,8 @@ const FontawesomeStyle = styled.div`
     color: white;
     text-decoration: none;
     font-size: 20px;
+    .fa-reddit-alien {
+      font-size: 23px;
+    }
   }
 `;
