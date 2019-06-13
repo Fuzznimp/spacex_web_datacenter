@@ -15,7 +15,7 @@ const RocketCard: React.FunctionComponent<Props> = props => {
       <Card
         bg="dark"
         text="white"
-        style={{ width: '18rem', borderRadius: '5px' }}>
+        style={{ width: '20rem', borderRadius: '5px', margin: '20px' }}>
         <Carousel>
           {data.flickr_images.map(image => (
             <Carousel.Item>
@@ -25,6 +25,7 @@ const RocketCard: React.FunctionComponent<Props> = props => {
                   src={image}
                   alt="Rocket Picture"
                   style={{
+                    height: '200px',
                     borderTopRightRadius: '5px',
                     borderTopLeftRadius: '5px'
                   }}
@@ -59,6 +60,7 @@ const CardFooterStyle = styled.div`
     text-decoration: none;
   }
   small {
-    color: #1e90ff !important;
+    color: white !important;
+    font-size: 14px;
   }
 `;
