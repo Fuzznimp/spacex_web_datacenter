@@ -85,9 +85,10 @@ const NavbarLinks = styled.div`
     color: white;
     text-decoration: none;
     font-size: 1.25rem;
-    transition: 0.3s;
+    transition: 0.2s;
     &:hover {
-      color: ##1e90ff;
+      /* color: #1e90ff; */
+      border-bottom: 2px solid white;
     }
   }
   .left {
