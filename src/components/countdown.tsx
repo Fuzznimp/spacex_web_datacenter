@@ -124,9 +124,6 @@ const CountdownStyle = styled.div`
       font-size: 3vh;
     }
   }
-  @media (max-width: 1200px) {
-    padding: 0 200px;
-  }
 `;
 
 const InfoCardStyle = styled.div`

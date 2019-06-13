@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Carousel, Col } from 'react-bootstrap';
+import styled from 'styled-components';
 
 interface Props {
   data: object;
@@ -7,22 +8,37 @@ interface Props {
 
 const RocketCard: React.FunctionComponent<Props> = props => {
   const { data }: { data: any } = props;
-  console.log(data)
+  console.log(data);
   return (
-    <Card>
-      <Card.Img variant="top" src={data.flickr_images[0]} />
-      <Card.Body>
-        <Card.Title>Card title</Card.Title>
-        <Card.Text>
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
-        </Card.Text>
-      </Card.Body>
-      <Card.Footer>
-        <small className="text-muted">Last updated 3 mins ago</small>
-      </Card.Footer>
-    </Card>
+    <Col xs="auto">
+      <Card bg="dark" text="white" style={{ width: '18rem' }}>
+        <Carousel>
+          {data.flickr_images.map(image => (
+            <Carousel.Item>
+              <a href={image} target="_blank" rel="noopener noreferrer">
+                <img
+                  className="d-block w-100"
+                  src={image}
+                  alt="Rocket Picture"
+                />
+              </a>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+        <Card.Body>
+          <Card.Title>{data.rocket_name}</Card.Title>
+          <Card.Text>{data.description}</Card.Text>
+        </Card.Body>
+        <Card.Footer>
+          <small className="text-muted">Last updated 3 mins ago</small>
+        </Card.Footer>
+      </Card>
+    </Col>
   );
 };
 
 export default RocketCard;
+
+// Style
+const CardStyle = styled.div`
+`;

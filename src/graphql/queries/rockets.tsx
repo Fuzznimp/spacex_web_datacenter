@@ -6,6 +6,7 @@ const rockets = gql`
       id
       rocket_name
       flickr_images
+      description
       active
       stages
       boosters

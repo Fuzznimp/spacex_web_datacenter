@@ -9,6 +9,7 @@ import CardContainer from './cardContainer';
 const Rockets = () => {
   return (
     <HomepageStyle>
+      <h2>Rockets</h2>
       <Query query={rockets}>
         {({ loading, error, data }) => {
           if (loading)
@@ -27,6 +28,9 @@ export default Rockets;
 
 const HomepageStyle = styled.div`
   width: 100%;
-  margin: 0 auto;
+  margin: 5% auto;
   padding: 0 15px;
+  h2 {
+    margin-bottom: 30px;
+  }
 `;
