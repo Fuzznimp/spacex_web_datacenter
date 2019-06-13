@@ -23,5 +23,10 @@ const History = () => {
 export default History;
 
 const HomepageStyle = styled.div`
-  margin: 0 auto;
+  width: 100%;
+  margin: 5% auto;
+  padding: 0 15px;
+  h2 {
+    margin-bottom: 30px;
+  }
 `;
