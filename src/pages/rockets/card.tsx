@@ -57,6 +57,6 @@ const CardFooterStyle = styled.div`
     text-decoration: none;
   }
   small {
-    color: #007bff !important;
+    color: #1E90FF !important;
   }
 `;

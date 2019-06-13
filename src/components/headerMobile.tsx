@@ -55,7 +55,7 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
                 exact
                 onClick={this.handleClose}
                 activeStyle={{
-                  color: '#007bff'
+                  color: '#1E90FF'
                 }}>
                 Home
               </NavLink>
@@ -63,7 +63,7 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
                 to="/Future"
                 onClick={this.handleClose}
                 activeStyle={{
-                  color: '#007bff'
+                  color: '#1E90FF'
                 }}>
                 Future
               </NavLink>
@@ -71,7 +71,7 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
                 to="/Past"
                 onClick={this.handleClose}
                 activeStyle={{
-                  color: '#007bff'
+                  color: '#1E90FF'
                 }}>
                 Past
               </NavLink>
@@ -86,7 +86,7 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
                 to="/rockets"
                 onClick={this.handleClose}
                 activeStyle={{
-                  color: '#007bff'
+                  color: '#1E90FF'
                 }}>
                 Rockets
               </NavLink>
@@ -94,7 +94,7 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
                 to="/history"
                 onClick={this.handleClose}
                 activeStyle={{
-                  color: '#007bff'
+                  color: '#1E90FF'
                 }}>
                 History
               </NavLink>
@@ -102,7 +102,7 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
                 to="/about"
                 onClick={this.handleClose}
                 activeStyle={{
-                  color: '#007bff'
+                  color: '#1E90FF'
                 }}>
                 About
               </NavLink>
@@ -155,7 +155,7 @@ const NavbarLinks = styled.div`
     font-size: 1.25rem;
     transition: 0.3s;
     &:hover {
-      color: #007bff;
+      color: #1E90FF;
     }
   }
 `;

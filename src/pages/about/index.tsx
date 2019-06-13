@@ -44,7 +44,7 @@ const AboutContainer = styled.div`
     margin: 0 5px;
     transition: 0.3s;
     &:hover {
-      color: #007bff;
+      color: #1E90FF;
     }
   }
   @media (max-width: 767px) {
@@ -64,7 +64,7 @@ const GithubLink = styled.div`
     margin: 0 30px;
     transition: 0.3s;
     &:hover {
-      color: #007bff;
+      color: #1E90FF;
     }
   }
 `;

@@ -12,21 +12,21 @@ const Header = () => {
           to="/"
           exact
           activeStyle={{
-            color: '#007bff'
+            color: '#1E90FF'
           }}>
           Home
         </NavLink>
         <NavLink
           to="/future"
           activeStyle={{
-            color: '#007bff'
+            color: '#1E90FF'
           }}>
           Future
         </NavLink>
         <NavLink
           to="/past"
           activeStyle={{
-            color: '#007bff'
+            color: '#1E90FF'
           }}>
           Past
         </NavLink>
@@ -39,21 +39,21 @@ const Header = () => {
         <NavLink
           to="/rockets"
           activeStyle={{
-            color: '#007bff'
+            color: '#1E90FF'
           }}>
           Rockets
         </NavLink>
         <NavLink
           to="/history"
           activeStyle={{
-            color: '#007bff'
+            color: '#1E90FF'
           }}>
           History
         </NavLink>
         <NavLink
           to="/about"
           activeStyle={{
-            color: '#007bff'
+            color: '#1E90FF'
           }}>
           About
         </NavLink>
@@ -87,7 +87,7 @@ const NavbarLinks = styled.div`
     font-size: 1.25rem;
     transition: 0.3s;
     &:hover {
-      color: #007bff;
+      color: ##1E90FF;
     }
   }
   .left {
