@@ -165,7 +165,7 @@ const UpcomingLaunchStyle = styled.div`
     cursor: pointer;
     transition: 0.3s;
     &:hover {
-      color: #1e90ff;
+      /* color: #1e90ff; */
       font-size: 55px;
     }
   }
