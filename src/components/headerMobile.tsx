@@ -30,9 +30,6 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
   }
 
   render() {
-    const modalBody = {
-      backgroundColor: 'black'
-    };
     return (
       <Navbar>
         <h1>SpaceX Data Center</h1>
@@ -45,17 +42,20 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
           show={this.state.show}
           onHide={this.handleClose}
           {...this.props}
-          size="lg"
+          size="sm"
           aria-labelledby="contained-modal-title-vcenter"
           centered>
-          <Modal.Body style={modalBody}>
+          <Modal.Body
+            style={{
+              backgroundColor: 'black'
+            }}>
             <NavbarLinks>
               <NavLink
                 to="/"
                 exact
                 onClick={this.handleClose}
                 activeStyle={{
-                  color: '#1E90FF'
+                  borderBottom: '2px solid white'
                 }}>
                 Home
               </NavLink>
@@ -63,7 +63,7 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
                 to="/Future"
                 onClick={this.handleClose}
                 activeStyle={{
-                  color: '#1E90FF'
+                  borderBottom: '2px solid white'
                 }}>
                 Future
               </NavLink>
@@ -71,7 +71,7 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
                 to="/Past"
                 onClick={this.handleClose}
                 activeStyle={{
-                  color: '#1E90FF'
+                  borderBottom: '2px solid white'
                 }}>
                 Past
               </NavLink>
@@ -86,7 +86,7 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
                 to="/rockets"
                 onClick={this.handleClose}
                 activeStyle={{
-                  color: '#1E90FF'
+                  borderBottom: '2px solid white'
                 }}>
                 Rockets
               </NavLink>
@@ -94,7 +94,7 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
                 to="/history"
                 onClick={this.handleClose}
                 activeStyle={{
-                  color: '#1E90FF'
+                  borderBottom: '2px solid white'
                 }}>
                 History
               </NavLink>
@@ -102,7 +102,7 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
                 to="/about"
                 onClick={this.handleClose}
                 activeStyle={{
-                  color: '#1E90FF'
+                  borderBottom: '2px solid white'
                 }}>
                 About
               </NavLink>
@@ -155,7 +155,7 @@ const NavbarLinks = styled.div`
     font-size: 1.25rem;
     transition: 0.3s;
     &:hover {
-      color: #1E90FF;
+      color: #1e90ff;
     }
   }
 `;
