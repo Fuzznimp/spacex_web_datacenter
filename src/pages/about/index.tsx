@@ -6,7 +6,7 @@ const About = () => {
     <AboutContainer>
       <h2>Developed and maintained by</h2>
       <h2>Anthony Montaigne</h2>
-      <GithubLink>
+      <MediaLinks>
         <a
           href="https://github.com/Fuzznimp/spacex_web_datacenter"
           target="_blank"
@@ -19,18 +19,56 @@ const About = () => {
           rel="noopener noreferrer">
           <i className="fab fa-linkedin" />
         </a>
-      </GithubLink>
+      </MediaLinks>
       <h3>Special thanks to:</h3>
       <p>
-        Charles Omer for his
+        <a
+          href="https://www.charlesomer.co.uk/"
+          target="_blank"
+          rel="noopener noreferrer">
+          <strong>Charles Omer</strong>
+        </a>
+        for his
         <a
           href="https://spacexdata.herokuapp.com/graphql"
           target="_blank"
           rel="noopener noreferrer">
-          GraphQL API
+          <strong>GraphQL API</strong>
         </a>
       </p>
-      <p>Ray Larabie for his awesome font</p>
+      <p>
+        <a
+          href="http://typodermicfonts.com/about/"
+          target="_blank"
+          rel="noopener noreferrer">
+          <strong>Ray Larabie</strong>
+        </a>
+        for his awesome
+        <a
+          href="http://typodermicfonts.com/nasalization"
+          target="_blank"
+          rel="noopener noreferrer">
+          <strong>FONT</strong>
+        </a>
+      </p>
+      <p>and above all</p>
+      <p>
+        <strong>
+          <a
+            href="https://www.spacex.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <strong>SpaceX</strong>
+          </a>
+        </strong>
+        for their amazing
+        <a
+          href="https://github.com/r-spacex/SpaceX-API"
+          target="_blank"
+          rel="noopener noreferrer">
+          <strong>API</strong>
+        </a>
+      </p>
     </AboutContainer>
   );
 };
@@ -39,7 +77,7 @@ export default About;
 
 // Style
 const AboutContainer = styled.div`
-  margin: 200px 0;
+  margin: 100px 0;
   h3 {
     margin-bottom: 20px;
   }
@@ -58,7 +96,7 @@ const AboutContainer = styled.div`
   }
 `;
 
-const GithubLink = styled.div`
+const MediaLinks = styled.div`
   display: flex;
   justify-content: center;
   font-size: 80px;
