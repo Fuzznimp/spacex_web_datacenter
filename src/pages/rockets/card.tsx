@@ -30,7 +30,7 @@ const RocketCard: React.FunctionComponent<Props> = props => {
           <Card.Text>{data.description}</Card.Text>
         </Card.Body>
         <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
+          <small className="text-muted">Details</small>
         </Card.Footer>
       </Card>
     </Col>

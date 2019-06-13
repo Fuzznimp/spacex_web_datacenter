@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Header = () => {
@@ -8,18 +8,55 @@ const Header = () => {
       <h1>SpaceX Data Center</h1>
       <NavbarLinks>
         <i className="fas fa-space-shuttle" />
-        <Link to="/">Home</Link>
-        <Link to="/future">Future</Link>
-        <Link to="/past">Past</Link>
+        <NavLink
+          to="/"
+          exact
+          activeStyle={{
+            color: '#007bff'
+          }}>
+          Home
+        </NavLink>
+        <NavLink
+          to="/future"
+          activeStyle={{
+            color: '#007bff'
+          }}>
+          Future
+        </NavLink>
+        <NavLink
+          to="/past"
+          activeStyle={{
+            color: '#007bff'
+          }}>
+          Past
+        </NavLink>
         <a
           href="https://www.spacex.com/webcast"
           target="_blank"
           rel="noopener noreferrer">
           Livestream
         </a>
-        <Link to="/rockets">Rockets</Link>
-        <Link to="/history">History</Link>
-        <Link to="/about">About</Link>
+        <NavLink
+          to="/rockets"
+          activeStyle={{
+            color: '#007bff'
+          }}>
+          Rockets
+        </NavLink>
+        <NavLink
+          to="/history"
+          activeStyle={{
+            color: '#007bff'
+          }}>
+          History
+        </NavLink>
+        <NavLink
+          to="/about"
+          activeStyle={{
+            color: '#007bff'
+          }}>
+          About
+        </NavLink>
         <i className="fas fa-space-shuttle left" />
       </NavbarLinks>
     </Navbar>
