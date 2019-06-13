@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { Modal } from 'react-bootstrap';
 
@@ -50,15 +50,31 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
           centered>
           <Modal.Body style={modalBody}>
             <NavbarLinks>
-              <Link to="/" onClick={this.handleClose}>
+              <NavLink
+                to="/"
+                exact
+                onClick={this.handleClose}
+                activeStyle={{
+                  color: '#007bff'
+                }}>
                 Home
-              </Link>
-              <Link to="/Future" onClick={this.handleClose}>
+              </NavLink>
+              <NavLink
+                to="/Future"
+                onClick={this.handleClose}
+                activeStyle={{
+                  color: '#007bff'
+                }}>
                 Future
-              </Link>
-              <Link to="/Past" onClick={this.handleClose}>
+              </NavLink>
+              <NavLink
+                to="/Past"
+                onClick={this.handleClose}
+                activeStyle={{
+                  color: '#007bff'
+                }}>
                 Past
-              </Link>
+              </NavLink>
               <a
                 href="https://www.spacex.com/webcast"
                 target="_blank"
@@ -66,15 +82,30 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
                 onClick={this.handleClose}>
                 Livestream
               </a>
-              <Link to="/rockets" onClick={this.handleClose}>
+              <NavLink
+                to="/rockets"
+                onClick={this.handleClose}
+                activeStyle={{
+                  color: '#007bff'
+                }}>
                 Rockets
-              </Link>
-              <Link to="/history" onClick={this.handleClose}>
+              </NavLink>
+              <NavLink
+                to="/history"
+                onClick={this.handleClose}
+                activeStyle={{
+                  color: '#007bff'
+                }}>
                 History
-              </Link>
-              <Link to="/about" onClick={this.handleClose}>
+              </NavLink>
+              <NavLink
+                to="/about"
+                onClick={this.handleClose}
+                activeStyle={{
+                  color: '#007bff'
+                }}>
                 About
-              </Link>
+              </NavLink>
             </NavbarLinks>
           </Modal.Body>
         </Modal>

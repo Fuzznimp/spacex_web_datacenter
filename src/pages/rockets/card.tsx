@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Carousel, Col } from 'react-bootstrap';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 interface Props {
   data: object;
@@ -29,9 +30,11 @@ const RocketCard: React.FunctionComponent<Props> = props => {
           <Card.Title>{data.rocket_name}</Card.Title>
           <Card.Text>{data.description}</Card.Text>
         </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Details</small>
-        </Card.Footer>
+        <Link to="/">
+          <Card.Footer>
+            <small className="text-muted">Details</small>
+          </Card.Footer>
+        </Link>
       </Card>
     </Col>
   );
@@ -40,5 +43,4 @@ const RocketCard: React.FunctionComponent<Props> = props => {
 export default RocketCard;
 
 // Style
-const CardStyle = styled.div`
-`;
+const CardStyle = styled.div``;
