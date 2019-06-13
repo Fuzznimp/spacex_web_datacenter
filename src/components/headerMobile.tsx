@@ -60,7 +60,7 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
                 Home
               </NavLink>
               <NavLink
-                to="/Future"
+                to="/future"
                 onClick={this.handleClose}
                 activeStyle={{
                   color: '#1E90FF'
@@ -68,7 +68,7 @@ class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
                 Future
               </NavLink>
               <NavLink
-                to="/Past"
+                to="/past"
                 onClick={this.handleClose}
                 activeStyle={{
                   color: '#1E90FF'
