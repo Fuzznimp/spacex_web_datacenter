@@ -23,7 +23,12 @@ const About = () => {
       <h3>Special thanks to:</h3>
       <p>
         Charles Omer for his
-        <a href="https://spacexdata.herokuapp.com/graphql">GraphQL API</a>
+        <a
+          href="https://spacexdata.herokuapp.com/graphql"
+          target="_blank"
+          rel="noopener noreferrer">
+          GraphQL API
+        </a>
       </p>
       <p>Ray Larabie for his awesome font</p>
     </AboutContainer>
@@ -44,7 +49,7 @@ const AboutContainer = styled.div`
     margin: 0 5px;
     transition: 0.3s;
     &:hover {
-      color: #1E90FF;
+      color: #1e90ff;
     }
   }
   @media (max-width: 767px) {
@@ -64,7 +69,7 @@ const GithubLink = styled.div`
     margin: 0 30px;
     transition: 0.3s;
     &:hover {
-      color: #1E90FF;
+      color: #1e90ff;
     }
   }
 `;
