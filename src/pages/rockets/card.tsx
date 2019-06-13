@@ -12,7 +12,10 @@ const RocketCard: React.FunctionComponent<Props> = props => {
   console.log(data);
   return (
     <Col xs="auto">
-      <Card bg="dark" text="white" style={{ width: '18rem' }}>
+      <Card
+        bg="dark"
+        text="white"
+        style={{ width: '18rem', borderRadius: '5px' }}>
         <Carousel>
           {data.flickr_images.map(image => (
             <Carousel.Item>
@@ -21,6 +24,10 @@ const RocketCard: React.FunctionComponent<Props> = props => {
                   className="d-block w-100"
                   src={image}
                   alt="Rocket Picture"
+                  style={{
+                    borderTopRightRadius: '5px',
+                    borderTopLeftRadius: '5px'
+                  }}
                 />
               </a>
             </Carousel.Item>
@@ -30,11 +37,13 @@ const RocketCard: React.FunctionComponent<Props> = props => {
           <Card.Title>{data.rocket_name}</Card.Title>
           <Card.Text>{data.description}</Card.Text>
         </Card.Body>
-        <Link to="/">
-          <Card.Footer>
-            <small className="text-muted">Details</small>
-          </Card.Footer>
-        </Link>
+        <CardFooterStyle>
+          <Link to={`/rockets/${data.rocket_id}`}>
+            <Card.Footer>
+              <small className="text-muted">Details</small>
+            </Card.Footer>
+          </Link>
+        </CardFooterStyle>
       </Card>
     </Col>
   );
@@ -43,4 +52,11 @@ const RocketCard: React.FunctionComponent<Props> = props => {
 export default RocketCard;
 
 // Style
-const CardStyle = styled.div``;
+const CardFooterStyle = styled.div`
+  a {
+    text-decoration: none;
+  }
+  small {
+    color: #007bff !important;
+  }
+`;

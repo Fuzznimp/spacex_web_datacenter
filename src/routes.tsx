@@ -9,6 +9,7 @@ import Homepage from './pages/homepage/index';
 import Future from './pages/future/index';
 import Past from './pages/past/index';
 import Rockets from './pages/rockets/index';
+import RocketShow from './pages/rockets/show';
 import History from './pages/history/index';
 import About from './pages/about/index';
 
@@ -48,7 +49,8 @@ class Routes extends Component<Props, State> {
             <Route path="/" exact component={Homepage} />
             <Route path="/future" component={Future} />
             <Route path="/past" component={Past} />
-            <Route path="/rockets" component={Rockets} />
+            <Route path="/rockets" exact component={Rockets} />
+            <Route path="/rockets/:id" component={RocketShow} />
             <Route path="/history" component={History} />
             <Route path="/about" component={About} />
           </div>

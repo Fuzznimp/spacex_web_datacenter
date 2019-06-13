@@ -9,6 +9,12 @@ body {
   color: white;
   text-shadow: black 0px 0px 2px;
   height: 100vh;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 @font-face {
   font-family: 'nasalization-rg';

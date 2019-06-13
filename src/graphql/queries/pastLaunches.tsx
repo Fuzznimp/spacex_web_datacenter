@@ -2,7 +2,7 @@ import { gql } from 'apollo-boost';
 
 const pastLaunches = gql`
   {
-    launches(range: past) {
+    launches(range: past, order: desc) {
       flight_number
       mission_name
       launch_date_utc
