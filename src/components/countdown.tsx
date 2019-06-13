@@ -168,6 +168,9 @@ const UpcomingLaunchStyle = styled.div`
       color: #007bff;
     }
   }
+  @media (max-width: 767px) {
+    padding-top: 10%;
+  }
 `;
 
 const LaunchInfos = styled.div`
