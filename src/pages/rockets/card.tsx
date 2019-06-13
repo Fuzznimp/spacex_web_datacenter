@@ -9,7 +9,6 @@ interface Props {
 
 const RocketCard: React.FunctionComponent<Props> = props => {
   const { data }: { data: any } = props;
-  console.log(data);
   return (
     <Col xs="auto">
       <Card
@@ -23,7 +22,7 @@ const RocketCard: React.FunctionComponent<Props> = props => {
                 <img
                   className="d-block w-100"
                   src={image}
-                  alt="Rocket Picture"
+                  alt="Rocket"
                   style={{
                     height: '200px',
                     borderTopRightRadius: '5px',
@@ -43,7 +42,7 @@ const RocketCard: React.FunctionComponent<Props> = props => {
         <CardFooterStyle>
           <Link to={`/rockets/${data.rocket_id}`}>
             <Card.Footer>
-              <small className="text-muted">Details</small>
+              <small>Details</small>
             </Card.Footer>
           </Link>
         </CardFooterStyle>
@@ -60,7 +59,6 @@ const CardFooterStyle = styled.div`
     text-decoration: none;
   }
   small {
-    color: white !important;
     font-size: 14px;
   }
 `;

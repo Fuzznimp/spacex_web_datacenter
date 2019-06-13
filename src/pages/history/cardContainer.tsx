@@ -14,8 +14,8 @@ const CardContainer: React.FunctionComponent<Props> = props => {
     <CardDeckStyle>
       <CardDeck>
         <Row>
-          {data.rockets.map(rocket => (
-            <Card key={rocket.id} data={rocket} />
+          {data.history.map(event => (
+            <Card key={event.id} data={event} />
           ))}
         </Row>
       </CardDeck>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import { Card, Spinner } from 'react-bootstrap';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import rockets from '../../graphql/queries/rockets';
 
 interface Props {
@@ -15,12 +15,14 @@ const RocketShow: React.FunctionComponent<Props> = ({ match }) => {
       {({ loading, error, data }) => {
         if (loading) return <Spinner animation="grow" variant="light" />;
         if (error) return <span>`Error! ${error.message}`</span>;
-        return <h1>Hey</h1>;
+        return (
+          <Card>
+            <p>yo</p>
+          </Card>
+        );
       }}
     </Query>
   );
 };
 
 export default RocketShow;
-
-const CardStyle = styled.div``;
