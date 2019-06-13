@@ -9,8 +9,8 @@ const Header = () => {
       <NavbarLinks>
           <i className="fas fa-space-shuttle" />
           <Link to="/">Home</Link>
-          <Link to="/Future">Future</Link>
-          <Link to="/Past">Past</Link>
+          <Link to="/future">Future</Link>
+          <Link to="/past">Past</Link>
           <a
             href="https://www.spacex.com/webcast"
             target="_blank"
