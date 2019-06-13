@@ -87,18 +87,10 @@ export default HeaderMobile;
 
 //Style
 const Navbar = styled.div`
-  padding-top: 50px;
+  padding-top: 10px;
   h1 {
-    margin: 10px 0 !important;
-    font-size: 5rem;
-    letter-spacing: 8px;
-  }
-  @media (max-width: 767px) {
-    /* smartphone */
-    h1 {
-      font-size: 3rem;
-      letter-spacing: 5px;
-    }
+    font-size: 3rem;
+    letter-spacing: 5px;
   }
 `;
 

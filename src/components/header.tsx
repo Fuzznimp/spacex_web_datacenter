@@ -36,14 +36,6 @@ const Navbar = styled.div`
     font-size: 5rem;
     letter-spacing: 8px;
   }
-  @media (max-width: 767px) {
-    /* smartphone */
-    padding-top: 5px;
-    h1 {
-      font-size: 3rem;
-      letter-spacing: 5px;
-    }
-  }
 `;
 
 const NavbarLinks = styled.div`
