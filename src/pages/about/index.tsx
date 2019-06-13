@@ -58,7 +58,7 @@ const About = () => {
             href="https://www.spacex.com/"
             target="_blank"
             rel="noopener noreferrer">
-            <strong>SpaceX</strong>
+            <strong>SpaceX </strong>
           </a>
         </strong>
         for their amazing
@@ -78,6 +78,11 @@ export default About;
 // Style
 const AboutContainer = styled.div`
   margin: 100px 0;
+  p {
+    &:last-child {
+      font-size: 30px;
+    }
+  }
   h3 {
     margin-bottom: 20px;
   }
