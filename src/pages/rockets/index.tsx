@@ -12,10 +12,7 @@ const Rockets = () => {
       <h2>Rockets</h2>
       <Query query={rockets}>
         {({ loading, error, data }) => {
-          if (loading)
-            return (
-              <Spinner animation="border" variant="primary" error="error" />
-            );
+          if (loading) return <Spinner animation="grow" variant="light" />;
           if (error) return <span>`Error! ${error.message}`</span>;
           return <CardContainer data={data} />;
         }}

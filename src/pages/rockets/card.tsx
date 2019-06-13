@@ -35,7 +35,9 @@ const RocketCard: React.FunctionComponent<Props> = props => {
         </Carousel>
         <Card.Body>
           <Card.Title>{data.rocket_name}</Card.Title>
-          <Card.Text>{data.description}</Card.Text>
+          <Card.Text style={{ textAlign: 'justify' }}>
+            {data.description}
+          </Card.Text>
         </Card.Body>
         <CardFooterStyle>
           <Link to={`/rockets/${data.rocket_id}`}>
@@ -57,6 +59,6 @@ const CardFooterStyle = styled.div`
     text-decoration: none;
   }
   small {
-    color: #1E90FF !important;
+    color: #1e90ff !important;
   }
 `;

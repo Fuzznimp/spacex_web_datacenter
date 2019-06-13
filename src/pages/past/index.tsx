@@ -9,10 +9,7 @@ const Past = () => {
     <div>
       <Query query={PastLaunches}>
         {({ loading, error, data }) => {
-          if (loading)
-            return (
-              <Spinner animation="border" variant="primary" error="error" />
-            );
+          if (loading) return <Spinner animation="grow" variant="light" />;
           if (error) return <span>`Error! ${error.message}`</span>;
           return <PastTable data={data} />;
         }}
