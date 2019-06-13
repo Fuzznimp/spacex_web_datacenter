@@ -74,7 +74,7 @@ const particlesParams: IParticlesParams = {
     events: {
       onhover: {
         enable: true,
-        mode: 'grab',
+        mode: 'grab'
       },
       onclick: {
         enable: true,
