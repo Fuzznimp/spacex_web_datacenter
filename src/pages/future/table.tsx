@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Table } from 'react-bootstrap';
 import React from 'react';
 
-import Td from './td';
+import { Td } from '../../components/td';
 import { TdDate } from './tdDate';
 import { TdPatch } from './tdPatch';
 import { SmallCountdown } from '../../components/smallCountdown';
