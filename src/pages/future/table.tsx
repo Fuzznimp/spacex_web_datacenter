@@ -5,14 +5,14 @@ import React from 'react';
 import Td from './td';
 import TdDate from './tdDate';
 import TdPatch from './tdPatch';
-import Countdown from './countdown';
+import { SmallCountdown } from '../../components/smallCountdown';
 
-interface Props {
+type FutureTableProps = {
   data: object;
-}
+};
 
-const FutureTable: React.FunctionComponent<Props> = props => {
-  const { data }: { data: any } = props;
+export function FutureTable({ data }: FutureTableProps) {
+  const launches = data['launches'];
 
   return (
     <FutureTableStyle>
@@ -36,10 +36,10 @@ const FutureTable: React.FunctionComponent<Props> = props => {
           </tr>
         </thead>
         <tbody>
-          {data.launches.map(launch => (
+          {launches.map(launch => (
             <tr key={launch.flight_number}>
               <Td data={launch.flight_number} />
-              <Countdown data={launch.launch_date_unix} />
+              <SmallCountdown futureDate={launch.launch_date_unix} />
               <TdDate data={launch.launch_date_utc} />
               <Td data={launch.mission_name} />
               <Td data={launch.rocket.rocket_name} />
@@ -51,9 +51,7 @@ const FutureTable: React.FunctionComponent<Props> = props => {
       </Table>
     </FutureTableStyle>
   );
-};
-
-export default FutureTable;
+}
 
 // Style
 const FutureTableStyle = styled.div`

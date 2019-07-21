@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Header = () => {
+export function Header() {
   return (
     <Navbar>
       <h1>SpaceX Data Center</h1>
@@ -61,9 +61,7 @@ const Header = () => {
       </NavbarLinks>
     </Navbar>
   );
-};
-
-export default Header;
+}
 
 //Style
 const Navbar = styled.div`

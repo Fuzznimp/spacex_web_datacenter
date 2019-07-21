@@ -1,0 +1,54 @@
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+
+type SmallCountdownProps = {
+  futureDate: number;
+};
+
+export function SmallCountdown({ futureDate }: SmallCountdownProps) {
+  const [dateNow, setDateNow] = useState(Math.floor(Date.now() / 1000));
+  let interval = 0;
+
+  function tick() {
+    setDateNow(Math.floor(Date.now() / 1000));
+  }
+
+  useEffect(() => {
+    interval = setInterval(tick, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  const delta = Math.floor(futureDate - dateNow);
+  const seconds = delta % 60;
+  const minutes = Math.floor(delta / 60) % 60;
+  const hours = Math.floor(delta / 3600) % 24;
+  const days = Math.floor(delta / 86400);
+
+  return (
+    <CountdownStyle>
+      {delta < 0 ? (
+        <p>TBD</p>
+      ) : (
+        <p>
+          {String(days).padStart(2, '0')}:{String(hours % 24).padStart(2, '0')}:
+          {String(minutes % 60).padStart(2, '0')}:
+          {String(seconds % 60).padStart(2, '0')}
+        </p>
+      )}
+    </CountdownStyle>
+  );
+}
+
+// Style
+const CountdownStyle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: white;
+    margin-bottom: 0;
+    padding: 12px;
+  }
+`;

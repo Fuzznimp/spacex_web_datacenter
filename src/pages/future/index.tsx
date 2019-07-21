@@ -2,9 +2,9 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import upcomingLaunches from '../../graphql/queries/upcomingLaunches';
 import { Spinner } from 'react-bootstrap';
-import FutureTable from './table';
+import { FutureTable } from './table';
 
-const Future = () => {
+export function Future() {
   return (
     <div>
       <Query query={upcomingLaunches}>
@@ -16,6 +16,4 @@ const Future = () => {
       </Query>
     </div>
   );
-};
-
-export default Future;
+}
