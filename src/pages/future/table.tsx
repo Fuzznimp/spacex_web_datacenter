@@ -7,10 +7,12 @@ import TdDate from './tdDate';
 import TdPatch from './tdPatch';
 import { SmallCountdown } from '../../components/smallCountdown';
 
-export function FutureTable(props) {
-  console.log('props', props);
-  const { data }: { data: any } = props;
-  console.log('data', data);
+type FutureTableProps = {
+  data: object;
+};
+
+export function FutureTable({ data }: FutureTableProps) {
+  const launches = data['launches'];
 
   return (
     <FutureTableStyle>
@@ -34,7 +36,7 @@ export function FutureTable(props) {
           </tr>
         </thead>
         <tbody>
-          {data.launches.map(launch => (
+          {launches.map(launch => (
             <tr key={launch.flight_number}>
               <Td data={launch.flight_number} />
               <SmallCountdown futureDate={launch.launch_date_unix} />
