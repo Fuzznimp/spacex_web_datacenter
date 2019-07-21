@@ -1,23 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface Props {
-  data: object;
+interface TdLandingProps {
+  landingSuccess: boolean;
 }
 
-const TdLanding: React.FunctionComponent<Props> = props => {
-  const { data }: { data: any } = props;
-
-  if (data === null) {
+export function TdLanding({ landingSuccess }: TdLandingProps) {
+  if (landingSuccess === null) {
     return (
       <TdLandingStyle>
         <p>NONE</p>
       </TdLandingStyle>
     );
-  } else if (data === true) {
+  } else if (landingSuccess) {
     return (
       <TdLandingStyle>
-        <p className="success-true">SUCESSED</p>
+        <p className="success-true">SUCCEEDED</p>
       </TdLandingStyle>
     );
   }
@@ -26,9 +24,7 @@ const TdLanding: React.FunctionComponent<Props> = props => {
       <p className="success-false">FAILED</p>
     </TdLandingStyle>
   );
-};
-
-export default TdLanding;
+}
 
 // Style
 const TdLandingStyle = styled.td`

@@ -1,23 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface Props {
-  data: object;
+interface TdLaunchProps {
+  launchSuccess: boolean;
 }
 
-const TdLaunch: React.FunctionComponent<Props> = props => {
-  const { data }: { data: any } = props;
-
-  if (data === null) {
+export function TdLaunch({ launchSuccess }: TdLaunchProps) {
+  if (launchSuccess === null) {
     return (
       <TdLaunchStyle>
         <p>NONE</p>
       </TdLaunchStyle>
     );
-  } else if (data === true) {
+  } else if (launchSuccess) {
     return (
       <TdLaunchStyle>
-        <p className="success-true">SUCESSED</p>
+        <p className="success-true">SUCCEEDED</p>
       </TdLaunchStyle>
     );
   }
@@ -26,7 +24,7 @@ const TdLaunch: React.FunctionComponent<Props> = props => {
       <p className="success-false">FAILED</p>
     </TdLaunchStyle>
   );
-};
+}
 
 export default TdLaunch;
 

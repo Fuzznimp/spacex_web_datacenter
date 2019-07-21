@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { Table } from 'react-bootstrap';
 import React from 'react';
 
-import Td from './td';
-import TdDate from './tdDate';
-import TdPatch from './tdPatch';
-import TdLanding from './tdLanding';
-import TdLaunch from './tdLaunch';
+import { Td } from '../../components/table/td';
+import { TdDate } from '../../components/table/tdDate';
+import { TdPatch } from '../../components/table/tdPatch';
+import { TdLanding } from './tdLanding';
+import { TdLaunch } from './tdLaunch';
 
 interface Props {
   data: object;
@@ -38,16 +38,14 @@ const PastTable: React.FunctionComponent<Props> = props => {
           {data.launches.map(launch => (
             <tr key={launch.flight_number}>
               <Td data={launch.flight_number} />
-              <TdPatch data={launch.links.mission_patch_small} />
-              <TdDate data={launch.launch_date_utc} />
+              <TdPatch patch={launch.links.mission_patch_small} />
+              <TdDate date={launch.launch_date_utc} />
               <Td data={launch.mission_name} />
               <Td data={launch.rocket.rocket_name} />
               <Td data={launch.launch_site.site_name} />
-              <TdLaunch
-                data={launch.launch_success}
-              />
+              <TdLaunch launchSuccess={launch.launch_success} />
               <TdLanding
-                data={launch.rocket.first_stage.cores[0].land_success}
+                landingSuccess={launch.rocket.first_stage.cores[0].land_success}
               />
             </tr>
           ))}
