@@ -1,61 +1,43 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-interface launchDate {
-  data: number;
-}
+export function SmallCountdown(props: any) {
+  const [dateNow, setDateNow] = useState(Math.floor(Date.now() / 1000));
+  let interval = 0;
+  console.log(typeof props);
+  const futureDate = props.futureDate;
 
-interface countdownState {
-  now: number;
-}
+  function tick() {
+    setDateNow(Math.floor(Date.now() / 1000));
+  }
 
-class Countdown extends Component<launchDate, countdownState> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      now: Math.floor(Date.now() / 1000)
+  useEffect(() => {
+    interval = setInterval(tick, 1000);
+    return () => {
+      clearInterval(interval);
     };
-  }
-  interval = 0;
+  }, []);
 
-  componentDidMount() {
-    this.interval = setInterval(this.tick, 1000);
-  }
+  const delta = Math.floor(futureDate - dateNow);
+  const seconds = delta % 60;
+  const minutes = Math.floor(delta / 60) % 60;
+  const hours = Math.floor(delta / 3600) % 24;
+  const days = Math.floor(delta / 86400);
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  tick = () => {
-    this.setState({ now: Math.floor(Date.now() / 1000) });
-  };
-
-  render() {
-    const { data } = this.props;
-    const { now } = this.state;
-    const delta = Math.floor(data - now);
-    const seconds = delta % 60;
-    const minutes = Math.floor(delta / 60) % 60;
-    const hours = Math.floor(delta / 3600) % 24;
-    const days = Math.floor(delta / 86400);
-    return (
-      <CountdownStyle>
-        {delta < 0 ? (
-          <p>TBD</p>
-        ) : (
-          <p>
-            {String(days).padStart(2, '0')}:
-            {String(hours % 24).padStart(2, '0')}:
-            {String(minutes % 60).padStart(2, '0')}:
-            {String(seconds % 60).padStart(2, '0')}
-          </p>
-        )}
-      </CountdownStyle>
-    );
-  }
+  return (
+    <CountdownStyle>
+      {delta < 0 ? (
+        <p>TBD</p>
+      ) : (
+        <p>
+          {String(days).padStart(2, '0')}:{String(hours % 24).padStart(2, '0')}:
+          {String(minutes % 60).padStart(2, '0')}:
+          {String(seconds % 60).padStart(2, '0')}
+        </p>
+      )}
+    </CountdownStyle>
+  );
 }
-
-export default Countdown;
 
 // Style
 const CountdownStyle = styled.div`
