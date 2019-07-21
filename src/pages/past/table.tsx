@@ -5,8 +5,8 @@ import React from 'react';
 import { Td } from '../../components/table/td';
 import { TdDate } from '../../components/table/tdDate';
 import { TdPatch } from '../../components/table/tdPatch';
-import TdLanding from './tdLanding';
-import TdLaunch from './tdLaunch';
+import { TdLanding } from './tdLanding';
+import { TdLaunch } from './tdLaunch';
 
 interface Props {
   data: object;
@@ -45,7 +45,7 @@ const PastTable: React.FunctionComponent<Props> = props => {
               <Td data={launch.launch_site.site_name} />
               <TdLaunch launchSuccess={launch.launch_success} />
               <TdLanding
-                data={launch.rocket.first_stage.cores[0].land_success}
+                landingSuccess={launch.rocket.first_stage.cores[0].land_success}
               />
             </tr>
           ))}
