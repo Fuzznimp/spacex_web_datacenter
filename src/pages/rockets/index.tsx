@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import { Spinner } from 'react-bootstrap';
 
 import rockets from '../../graphql/queries/rockets';
-import CardContainer from './cardContainer';
+import { RocketCardContainer } from './cardContainer';
 
-const Rockets = () => {
+export function Rockets() {
   return (
     <HomepageStyle>
       <h2>Rockets</h2>
@@ -14,14 +14,12 @@ const Rockets = () => {
         {({ loading, error, data }) => {
           if (loading) return <Spinner animation="grow" variant="light" />;
           if (error) return <span>`Error! ${error.message}`</span>;
-          return <CardContainer data={data} />;
+          return <RocketCardContainer data={data} />;
         }}
       </Query>
     </HomepageStyle>
   );
-};
-
-export default Rockets;
+}
 
 const HomepageStyle = styled.div`
   width: 100%;

@@ -2,28 +2,25 @@ import React from 'react';
 import { CardDeck, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 
-import Card from './card';
+import { HistoryCard } from './card';
 
-interface Props {
-  data: object;
-}
+type HistoryCardContainerProps = {
+  data: any;
+};
 
-const CardContainer: React.FunctionComponent<Props> = props => {
-  const { data }: { data: any } = props;
+export function HistoryCardContainer({ data }: HistoryCardContainerProps) {
   return (
     <CardDeckStyle>
       <CardDeck>
         <Row>
           {data.history.map(event => (
-            <Card key={event.id} data={event} />
+            <HistoryCard key={event.id} data={event} />
           ))}
         </Row>
       </CardDeck>
     </CardDeckStyle>
   );
-};
-
-export default CardContainer;
+}
 
 const CardDeckStyle = styled.div`
   .card-deck {

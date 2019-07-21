@@ -4,7 +4,7 @@ import PastLaunches from '../../graphql/queries/pastLaunches';
 import { Spinner } from 'react-bootstrap';
 import PastTable from './table';
 
-const Past = () => {
+export function Past() {
   return (
     <div>
       <Query query={PastLaunches}>
@@ -16,6 +16,4 @@ const Past = () => {
       </Query>
     </div>
   );
-};
-
-export default Past;
+}

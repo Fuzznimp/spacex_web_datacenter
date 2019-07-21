@@ -1,22 +1,15 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import CardButton from './cardButton';
+import { HistoryCardButton } from './cardButton';
+import { previousDate } from '../../utils/previousDate';
 
-interface Props {
-  data: object;
-}
+type HistoryCardProps = {
+  data: any;
+};
 
-const HistoryCard: React.FunctionComponent<Props> = props => {
-  const { data }: { data: any } = props;
-  const previousDate = new Date(data.event_date_utc);
-  const date =
-    previousDate.getDate() +
-    1 +
-    '-' +
-    previousDate.getMonth() +
-    '-' +
-    previousDate.getFullYear();
+export function HistoryCard({ data }: HistoryCardProps) {
+  const date = previousDate(data.event_date_utc);
 
   return (
     <HistoryCardStyle>
@@ -32,7 +25,7 @@ const HistoryCard: React.FunctionComponent<Props> = props => {
               {Object.values(data.links)
                 .filter(Boolean)
                 .map((link: any, key) => (
-                  <CardButton key={key} data={link} />
+                  <HistoryCardButton key={key} data={link} />
                 ))}
             </BottomLinks>
           </Card.Body>
@@ -40,9 +33,7 @@ const HistoryCard: React.FunctionComponent<Props> = props => {
       </Col>
     </HistoryCardStyle>
   );
-};
-
-export default HistoryCard;
+}
 
 // Style
 const HistoryCardStyle = styled.div`

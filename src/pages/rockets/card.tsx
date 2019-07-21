@@ -3,12 +3,11 @@ import { Card, Carousel, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-interface Props {
-  data: object;
-}
+type RocketCardProps = {
+  data: any;
+};
 
-const RocketCard: React.FunctionComponent<Props> = props => {
-  const { data }: { data: any } = props;
+export function RocketCard({ data }: RocketCardProps) {
   return (
     <Col xs="auto">
       <Card
@@ -49,9 +48,7 @@ const RocketCard: React.FunctionComponent<Props> = props => {
       </Card>
     </Col>
   );
-};
-
-export default RocketCard;
+}
 
 // Style
 const CardFooterStyle = styled.div`

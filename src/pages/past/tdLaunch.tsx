@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface TdLaunchProps {
+type TdLaunchProps = {
   launchSuccess: boolean;
-}
+};
 
 export function TdLaunch({ launchSuccess }: TdLaunchProps) {
   if (launchSuccess === null) {

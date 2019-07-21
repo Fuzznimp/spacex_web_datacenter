@@ -2,28 +2,25 @@ import React from 'react';
 import { CardDeck, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 
-import Card from './card';
+import { RocketCard } from './card';
 
-interface Props {
-  data: object;
-}
+type RocketCardContainerProps = {
+  data: any;
+};
 
-const CardContainer: React.FunctionComponent<Props> = props => {
-  const { data }: { data: any } = props;
+export function RocketCardContainer({ data }: RocketCardContainerProps) {
   return (
     <CardDeckStyle>
       <CardDeck>
         <Row>
           {data.rockets.map(rocket => (
-            <Card key={rocket.id} data={rocket} />
+            <RocketCard key={rocket.id} data={rocket} />
           ))}
         </Row>
       </CardDeck>
     </CardDeckStyle>
   );
-};
-
-export default CardContainer;
+}
 
 const CardDeckStyle = styled.div`
   .card-deck {
