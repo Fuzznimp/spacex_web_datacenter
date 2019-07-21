@@ -2,7 +2,7 @@ import React from 'react';
 import { CardDeck, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 
-import Card from './card';
+import { RocketCard } from './card';
 
 interface Props {
   data: object;
@@ -15,7 +15,7 @@ const CardContainer: React.FunctionComponent<Props> = props => {
       <CardDeck>
         <Row>
           {data.rockets.map(rocket => (
-            <Card key={rocket.id} data={rocket} />
+            <RocketCard key={rocket.id} data={rocket} />
           ))}
         </Row>
       </CardDeck>
