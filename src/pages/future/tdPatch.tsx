@@ -1,24 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface Props {
-  data: object;
-}
+type TdPatchProps = {
+  patch: string;
+};
 
-const TdPatch: React.FunctionComponent<Props> = props => {
-  const { data }: { data: any } = props;
-  return data! ? (
+export function TdPatch({ patch }: TdPatchProps) {
+  return patch ? (
     <TdPatchStyle>
-      <a href={data} target="_blank" rel="noopener noreferrer">
-        <img src={data} alt="Mission Patch" />
+      <a href={patch} target="_blank" rel="noopener noreferrer">
+        <img src={patch} alt="Mission Patch" />
       </a>
     </TdPatchStyle>
   ) : (
     <td>TBD</td>
   );
-};
-
-export default TdPatch;
+}
 
 // Style
 const TdPatchStyle = styled.td`

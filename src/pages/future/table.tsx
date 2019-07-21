@@ -4,7 +4,7 @@ import React from 'react';
 
 import Td from './td';
 import TdDate from './tdDate';
-import TdPatch from './tdPatch';
+import { TdPatch } from './tdPatch';
 import { SmallCountdown } from '../../components/smallCountdown';
 
 type FutureTableProps = {
@@ -44,7 +44,7 @@ export function FutureTable({ data }: FutureTableProps) {
               <Td data={launch.mission_name} />
               <Td data={launch.rocket.rocket_name} />
               <Td data={launch.launch_site.site_name} />
-              <TdPatch data={launch.links.mission_patch_small} />
+              <TdPatch patch={launch.links.mission_patch_small} />
             </tr>
           ))}
         </tbody>
