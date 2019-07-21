@@ -10,7 +10,7 @@ import { Future } from './pages/future/index';
 import Past from './pages/past/index';
 import { Rockets } from './pages/rockets/index';
 import RocketShow from './pages/rockets/show';
-import History from './pages/history/index';
+import { History } from './pages/history/index';
 import About from './pages/about/index';
 
 export function Routes() {

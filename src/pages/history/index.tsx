@@ -6,7 +6,7 @@ import { Spinner } from 'react-bootstrap';
 
 import HistoryCardContainer from './cardContainer';
 
-const History = () => {
+export function History() {
   return (
     <HomepageStyle>
       <Query query={history}>
@@ -18,9 +18,7 @@ const History = () => {
       </Query>
     </HomepageStyle>
   );
-};
-
-export default History;
+}
 
 const HomepageStyle = styled.div`
   width: 100%;
