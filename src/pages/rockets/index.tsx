@@ -6,7 +6,7 @@ import { Spinner } from 'react-bootstrap';
 import rockets from '../../graphql/queries/rockets';
 import CardContainer from './cardContainer';
 
-const Rockets = () => {
+export function Rockets() {
   return (
     <HomepageStyle>
       <h2>Rockets</h2>
@@ -19,9 +19,7 @@ const Rockets = () => {
       </Query>
     </HomepageStyle>
   );
-};
-
-export default Rockets;
+}
 
 const HomepageStyle = styled.div`
   width: 100%;
