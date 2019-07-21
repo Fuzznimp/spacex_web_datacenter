@@ -40,18 +40,16 @@ class Countdown extends Component<launchDate, countdownState> {
     const days = Math.floor(delta / 86400);
     return (
       <CountdownStyle>
-        <CardStyle>
-          {delta < 0 ? (
-            <p>TBD</p>
-          ) : (
-            <p>
-              {String(days).padStart(2, '0')}:
-              {String(hours % 24).padStart(2, '0')}:
-              {String(minutes % 60).padStart(2, '0')}:
-              {String(seconds % 60).padStart(2, '0')}
-            </p>
-          )}
-        </CardStyle>
+        {delta < 0 ? (
+          <p>TBD</p>
+        ) : (
+          <p>
+            {String(days).padStart(2, '0')}:
+            {String(hours % 24).padStart(2, '0')}:
+            {String(minutes % 60).padStart(2, '0')}:
+            {String(seconds % 60).padStart(2, '0')}
+          </p>
+        )}
       </CountdownStyle>
     );
   }
@@ -64,10 +62,6 @@ const CountdownStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const CardStyle = styled.div`
-  /* width: 300px; */
   p {
     color: white;
     margin-bottom: 0;
