@@ -5,7 +5,7 @@ import React from 'react';
 import Td from './td';
 import TdDate from './tdDate';
 import TdPatch from './tdPatch';
-import Countdown from './countdown';
+import Countdown from '../../components/smallCountdown';
 
 interface Props {
   data: object;

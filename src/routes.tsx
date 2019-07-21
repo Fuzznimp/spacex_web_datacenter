@@ -3,7 +3,7 @@ import { Router, Route } from 'react-router-dom';
 
 import RoutesHistory from './utils/history';
 
-import Header from './components/header';
+import { Header } from './components/header';
 import HeaderMobile from './components/headerMobile';
 import { Homepage } from './pages/homepage/index';
 import Future from './pages/future/index';
