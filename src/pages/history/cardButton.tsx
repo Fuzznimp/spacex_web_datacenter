@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface Props {
-  data: object;
-}
+type HistoryCardButtonProps = {
+  data: any;
+};
 
-const CardButton: React.FunctionComponent<Props> = props => {
-  const { data }: { data: any } = props;
-
+export function HistoryCardButton({ data }: HistoryCardButtonProps) {
   const redditRegex = /reddit/g;
   const wikiRegex = /wikipedia/g;
 
@@ -28,9 +26,7 @@ const CardButton: React.FunctionComponent<Props> = props => {
       </a>
     </FontawesomeStyle>
   );
-};
-
-export default CardButton;
+}
 
 // Style
 const FontawesomeStyle = styled.div`

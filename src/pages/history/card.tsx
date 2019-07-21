@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import CardButton from './cardButton';
+import { HistoryCardButton } from './cardButton';
 
 interface HistoryCardProps {
   data: any;
@@ -31,7 +31,7 @@ export function HistoryCard({ data }: HistoryCardProps) {
               {Object.values(data.links)
                 .filter(Boolean)
                 .map((link: any, key) => (
-                  <CardButton key={key} data={link} />
+                  <HistoryCardButton key={key} data={link} />
                 ))}
             </BottomLinks>
           </Card.Body>
