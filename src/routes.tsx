@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Router, Route } from 'react-router-dom';
 
 import RoutesHistory from './utils/history';
@@ -13,51 +13,34 @@ import RocketShow from './pages/rockets/show';
 import History from './pages/history/index';
 import About from './pages/about/index';
 
-interface Props {}
-interface State {
-  isMobile: boolean;
-}
+export function Routes() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(1280);
 
-class Routes extends Component<Props, State> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMobile: false //This is where I am having problems
+  const setWindowWidthEventListener = event => setWindowWidth(event.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener('resize', setWindowWidthEventListener);
+    setIsMobile(windowWidth < 767);
+    return function removeEventListener() {
+      window.removeEventListener('resize', setWindowWidthEventListener);
     };
+  }, [windowWidth]);
 
-    this.updatePredicate = this.updatePredicate.bind(this);
-  }
-  componentDidMount() {
-    this.updatePredicate();
-    window.addEventListener('resize', this.updatePredicate);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updatePredicate);
-  }
-
-  updatePredicate() {
-    this.setState({ isMobile: window.innerWidth < 767 });
-  }
-  render() {
-    const isMobile = this.state.isMobile;
-    return (
-      <div>
-        <Router history={RoutesHistory}>
-          <div>
-            {isMobile ? <HeaderMobile /> : <Header />}
-            <Route path="/" exact component={Homepage} />
-            <Route path="/future" component={Future} />
-            <Route path="/past" component={Past} />
-            <Route path="/rockets" exact component={Rockets} />
-            <Route path="/rockets/:id" component={RocketShow} />
-            <Route path="/history" component={History} />
-            <Route path="/about" component={About} />
-          </div>
-        </Router>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Router history={RoutesHistory}>
+        <div>
+          {isMobile ? <HeaderMobile /> : <Header />}
+          <Route path="/" exact component={Homepage} />
+          <Route path="/future" component={Future} />
+          <Route path="/past" component={Past} />
+          <Route path="/rockets" exact component={Rockets} />
+          <Route path="/rockets/:id" component={RocketShow} />
+          <Route path="/history" component={History} />
+          <Route path="/about" component={About} />
+        </div>
+      </Router>
+    </div>
+  );
 }
-
-export default Routes;

@@ -3,8 +3,8 @@ import { ApolloProvider } from 'react-apollo';
 import Particles from 'react-particles-js';
 
 import client from './graphql/apollo/default';
-import Routes from './routes';
-import particlesParams from './lib/particlesParams'
+import { Routes } from './routes';
+import particlesParams from './lib/particlesParams';
 
 import './App.css';
 
