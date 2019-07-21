@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-export function SmallCountdown(props: any) {
+type SmallCountdownProps = {
+  futureDate: number;
+};
+
+export function SmallCountdown({ futureDate }: SmallCountdownProps) {
   const [dateNow, setDateNow] = useState(Math.floor(Date.now() / 1000));
   let interval = 0;
-  const futureDate = props.futureDate;
 
   function tick() {
     setDateNow(Math.floor(Date.now() / 1000));
