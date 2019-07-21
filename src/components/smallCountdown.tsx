@@ -7,13 +7,13 @@ type SmallCountdownProps = {
 
 export function SmallCountdown({ futureDate }: SmallCountdownProps) {
   const [dateNow, setDateNow] = useState(Math.floor(Date.now() / 1000));
-  let interval = 0;
 
   function tick() {
     setDateNow(Math.floor(Date.now() / 1000));
   }
 
   useEffect(() => {
+    let interval = 0;
     interval = setInterval(tick, 1000);
     return () => {
       clearInterval(interval);

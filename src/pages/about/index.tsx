@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import fuzznimpLogo from '../../assets/fuzznimp_logo.png';
 
 export function About() {
   return (
@@ -13,6 +14,7 @@ export function About() {
           rel="noopener noreferrer">
           <i className="fab fa-github-square" />
         </a>
+        <img src={fuzznimpLogo} alt="Fuzznimp Logo" />
         <a
           href="https://www.linkedin.com/in/anthony-montaigne-abb210176/"
           target="_blank"
@@ -76,6 +78,15 @@ export function About() {
 // Style
 const AboutContainer = styled.div`
   margin: 100px 0;
+  img {
+    width: 120px;
+    -webkit-transition: -webkit-transform 0.8s ease-in-out;
+    transition: transform 0.8s ease-in-out;
+    &:hover {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
   p {
     &:last-child {
       font-size: 30px;
