@@ -5,7 +5,6 @@ type TdDateProps = {
 };
 
 export function TdDate({ date }: TdDateProps) {
-  console.log(date);
   const previousDate = new Date(date);
   const previousDateFormated =
     previousDate.getDate() +
