@@ -3,12 +3,11 @@ import { Card, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import CardButton from './cardButton';
 
-interface Props {
-  data: object;
+interface HistoryCardProps {
+  data: any;
 }
 
-const HistoryCard: React.FunctionComponent<Props> = props => {
-  const { data }: { data: any } = props;
+export function HistoryCard({ data }: HistoryCardProps) {
   const previousDate = new Date(data.event_date_utc);
   const date =
     previousDate.getDate() +
@@ -40,9 +39,7 @@ const HistoryCard: React.FunctionComponent<Props> = props => {
       </Col>
     </HistoryCardStyle>
   );
-};
-
-export default HistoryCard;
+}
 
 // Style
 const HistoryCardStyle = styled.div`

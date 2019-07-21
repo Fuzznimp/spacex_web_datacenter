@@ -2,7 +2,7 @@ import React from 'react';
 import { CardDeck, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 
-import Card from './card';
+import { HistoryCard } from './card';
 
 interface Props {
   data: object;
@@ -15,7 +15,7 @@ const CardContainer: React.FunctionComponent<Props> = props => {
       <CardDeck>
         <Row>
           {data.history.map(event => (
-            <Card key={event.id} data={event} />
+            <HistoryCard key={event.id} data={event} />
           ))}
         </Row>
       </CardDeck>
