@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Spinner } from 'react-bootstrap';
 
 import rockets from '../../graphql/queries/rockets';
-import CardContainer from './cardContainer';
+import { RocketCardContainer } from './cardContainer';
 
 export function Rockets() {
   return (
@@ -14,7 +14,7 @@ export function Rockets() {
         {({ loading, error, data }) => {
           if (loading) return <Spinner animation="grow" variant="light" />;
           if (error) return <span>`Error! ${error.message}`</span>;
-          return <CardContainer data={data} />;
+          return <RocketCardContainer data={data} />;
         }}
       </Query>
     </HomepageStyle>
