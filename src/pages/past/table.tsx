@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap';
 import React from 'react';
 
 import { Td } from '../../components/td';
-import TdDate from './tdDate';
+import { TdDate } from '../../components/tdDate';
 import TdPatch from './tdPatch';
 import TdLanding from './tdLanding';
 import TdLaunch from './tdLaunch';
@@ -39,7 +39,7 @@ const PastTable: React.FunctionComponent<Props> = props => {
             <tr key={launch.flight_number}>
               <Td data={launch.flight_number} />
               <TdPatch data={launch.links.mission_patch_small} />
-              <TdDate data={launch.launch_date_utc} />
+              <TdDate date={launch.launch_date_utc} />
               <Td data={launch.mission_name} />
               <Td data={launch.rocket.rocket_name} />
               <Td data={launch.launch_site.site_name} />

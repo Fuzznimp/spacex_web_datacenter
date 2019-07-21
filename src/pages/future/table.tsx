@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap';
 import React from 'react';
 
 import { Td } from '../../components/td';
-import { TdDate } from './tdDate';
+import { TdDate } from '../../components/tdDate';
 import { TdPatch } from './tdPatch';
 import { SmallCountdown } from '../../components/smallCountdown';
 
