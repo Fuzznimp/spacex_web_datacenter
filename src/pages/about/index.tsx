@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const About = () => {
+export function About() {
   return (
     <AboutContainer>
       <h2>Developed and maintained by</h2>
@@ -71,9 +71,7 @@ const About = () => {
       </p>
     </AboutContainer>
   );
-};
-
-export default About;
+}
 
 // Style
 const AboutContainer = styled.div`
