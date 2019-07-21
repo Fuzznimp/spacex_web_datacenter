@@ -8,7 +8,9 @@ import TdPatch from './tdPatch';
 import { SmallCountdown } from '../../components/smallCountdown';
 
 export function FutureTable(props) {
+  console.log('props', props);
   const { data }: { data: any } = props;
+  console.log('data', data);
 
   return (
     <FutureTableStyle>

@@ -6,7 +6,7 @@ import RoutesHistory from './utils/history';
 import { Header } from './components/header';
 import HeaderMobile from './components/headerMobile';
 import { Homepage } from './pages/homepage/index';
-import Future from './pages/future/index';
+import { Future } from './pages/future/index';
 import Past from './pages/past/index';
 import Rockets from './pages/rockets/index';
 import RocketShow from './pages/rockets/show';
