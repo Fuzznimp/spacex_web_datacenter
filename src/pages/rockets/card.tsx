@@ -3,9 +3,9 @@ import { Card, Carousel, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-interface RocketCardProps {
+type RocketCardProps = {
   data: any;
-}
+};
 
 export function RocketCard({ data }: RocketCardProps) {
   return (

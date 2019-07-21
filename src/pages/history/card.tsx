@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import { HistoryCardButton } from './cardButton';
 import { previousDate } from '../../utils/previousDate';
 
-interface HistoryCardProps {
+type HistoryCardProps = {
   data: any;
-}
+};
 
 export function HistoryCard({ data }: HistoryCardProps) {
   const date = previousDate(data.event_date_utc);

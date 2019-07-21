@@ -4,9 +4,9 @@ import styled from 'styled-components';
 
 import { HistoryCard } from './card';
 
-interface HistoryCardContainerProps {
+type HistoryCardContainerProps = {
   data: any;
-}
+};
 
 export function HistoryCardContainer({ data }: HistoryCardContainerProps) {
   return (

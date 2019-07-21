@@ -4,9 +4,9 @@ import styled from 'styled-components';
 
 import { RocketCard } from './card';
 
-interface RocketCardContainerProps {
+type RocketCardContainerProps = {
   data: any;
-}
+};
 
 export function RocketCardContainer({ data }: RocketCardContainerProps) {
   return (
