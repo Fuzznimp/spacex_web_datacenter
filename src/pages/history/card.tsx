@@ -2,20 +2,14 @@ import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { HistoryCardButton } from './cardButton';
+import { previousDate } from '../../utils/previousDate';
 
 interface HistoryCardProps {
   data: any;
 }
 
 export function HistoryCard({ data }: HistoryCardProps) {
-  const previousDate = new Date(data.event_date_utc);
-  const date =
-    previousDate.getDate() +
-    1 +
-    '-' +
-    previousDate.getMonth() +
-    '-' +
-    previousDate.getFullYear();
+  const date = previousDate(data.event_date_utc);
 
   return (
     <HistoryCardStyle>
