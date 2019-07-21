@@ -4,7 +4,7 @@ import { Router, Route } from 'react-router-dom';
 import RoutesHistory from './utils/history';
 
 import { Header } from './components/header';
-import HeaderMobile from './components/headerMobile';
+import { HeaderMobile } from './components/headerMobile';
 import { Homepage } from './pages/homepage/index';
 import { Future } from './pages/future/index';
 import Past from './pages/past/index';
@@ -14,10 +14,11 @@ import History from './pages/history/index';
 import About from './pages/about/index';
 
 export function Routes() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
   const [windowWidth, setWindowWidth] = useState(1280);
 
-  const setWindowWidthEventListener = event => setWindowWidth(event.innerWidth);
+  const setWindowWidthEventListener = event =>
+    setWindowWidth(event.currentTarget.innerWidth);
 
   useEffect(() => {
     window.addEventListener('resize', setWindowWidthEventListener);

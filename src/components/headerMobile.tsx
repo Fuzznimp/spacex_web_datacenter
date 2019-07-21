@@ -1,120 +1,101 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { Modal } from 'react-bootstrap';
 
-interface HeaderMobileProps {}
+export function HeaderMobile(props) {
+  const [showModal, setShowModal] = useState(false);
 
-interface HeaderMobileState {
-  show: boolean;
+  function handleCloseModal() {
+    setShowModal(false);
+  }
+
+  function handleShowModal() {
+    setShowModal(true);
+  }
+
+  return (
+    <Navbar>
+      <h1>SpaceX Data Center</h1>
+      <NavBtn onClick={handleShowModal}>
+        <i className="fas fa-space-shuttle" />
+        <p>Navigation</p>
+        <i className="fas fa-space-shuttle left" />
+      </NavBtn>
+      <Modal
+        show={showModal}
+        onHide={handleCloseModal}
+        {...props}
+        size="sm"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered>
+        <Modal.Body
+          style={{
+            backgroundColor: 'black'
+          }}>
+          <NavbarLinks>
+            <NavLink
+              to="/"
+              exact
+              onClick={handleCloseModal}
+              activeStyle={{
+                color: '#1E90FF'
+              }}>
+              Home
+            </NavLink>
+            <NavLink
+              to="/future"
+              onClick={handleCloseModal}
+              activeStyle={{
+                color: '#1E90FF'
+              }}>
+              Future
+            </NavLink>
+            <NavLink
+              to="/past"
+              onClick={handleCloseModal}
+              activeStyle={{
+                color: '#1E90FF'
+              }}>
+              Past
+            </NavLink>
+            <a
+              href="https://www.spacex.com/webcast"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleCloseModal}>
+              Livestream
+            </a>
+            <NavLink
+              to="/rockets"
+              onClick={handleCloseModal}
+              activeStyle={{
+                color: '#1E90FF'
+              }}>
+              Rockets
+            </NavLink>
+            <NavLink
+              to="/history"
+              onClick={handleCloseModal}
+              activeStyle={{
+                color: '#1E90FF'
+              }}>
+              History
+            </NavLink>
+            <NavLink
+              to="/about"
+              onClick={handleCloseModal}
+              activeStyle={{
+                color: '#1E90FF'
+              }}>
+              About
+            </NavLink>
+          </NavbarLinks>
+        </Modal.Body>
+      </Modal>
+    </Navbar>
+  );
 }
-
-class HeaderMobile extends Component<HeaderMobileProps, HeaderMobileState> {
-  constructor(props, context) {
-    super(props, context);
-
-    this.handleShow = this.handleShow.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-
-    this.state = {
-      show: false
-    };
-  }
-
-  handleClose() {
-    this.setState({ show: false });
-  }
-
-  handleShow() {
-    this.setState({ show: true });
-  }
-
-  render() {
-    return (
-      <Navbar>
-        <h1>SpaceX Data Center</h1>
-        <NavBtn onClick={this.handleShow}>
-          <i className="fas fa-space-shuttle" />
-          <p>Navigation</p>
-          <i className="fas fa-space-shuttle left" />
-        </NavBtn>
-        <Modal
-          show={this.state.show}
-          onHide={this.handleClose}
-          {...this.props}
-          size="sm"
-          aria-labelledby="contained-modal-title-vcenter"
-          centered>
-          <Modal.Body
-            style={{
-              backgroundColor: 'black'
-            }}>
-            <NavbarLinks>
-              <NavLink
-                to="/"
-                exact
-                onClick={this.handleClose}
-                activeStyle={{
-                  color: '#1E90FF'
-                }}>
-                Home
-              </NavLink>
-              <NavLink
-                to="/future"
-                onClick={this.handleClose}
-                activeStyle={{
-                  color: '#1E90FF'
-                }}>
-                Future
-              </NavLink>
-              <NavLink
-                to="/past"
-                onClick={this.handleClose}
-                activeStyle={{
-                  color: '#1E90FF'
-                }}>
-                Past
-              </NavLink>
-              <a
-                href="https://www.spacex.com/webcast"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={this.handleClose}>
-                Livestream
-              </a>
-              <NavLink
-                to="/rockets"
-                onClick={this.handleClose}
-                activeStyle={{
-                  color: '#1E90FF'
-                }}>
-                Rockets
-              </NavLink>
-              <NavLink
-                to="/history"
-                onClick={this.handleClose}
-                activeStyle={{
-                  color: '#1E90FF'
-                }}>
-                History
-              </NavLink>
-              <NavLink
-                to="/about"
-                onClick={this.handleClose}
-                activeStyle={{
-                  color: '#1E90FF'
-                }}>
-                About
-              </NavLink>
-            </NavbarLinks>
-          </Modal.Body>
-        </Modal>
-      </Navbar>
-    );
-  }
-}
-
-export default HeaderMobile;
 
 //Style
 const Navbar = styled.div`
