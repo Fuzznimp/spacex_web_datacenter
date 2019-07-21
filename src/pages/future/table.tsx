@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap';
 import React from 'react';
 
 import Td from './td';
-import TdDate from './tdDate';
+import { TdDate } from './tdDate';
 import { TdPatch } from './tdPatch';
 import { SmallCountdown } from '../../components/smallCountdown';
 
@@ -40,7 +40,7 @@ export function FutureTable({ data }: FutureTableProps) {
             <tr key={launch.flight_number}>
               <Td data={launch.flight_number} />
               <SmallCountdown futureDate={launch.launch_date_unix} />
-              <TdDate data={launch.launch_date_utc} />
+              <TdDate date={launch.launch_date_utc} />
               <Td data={launch.mission_name} />
               <Td data={launch.rocket.rocket_name} />
               <Td data={launch.launch_site.site_name} />

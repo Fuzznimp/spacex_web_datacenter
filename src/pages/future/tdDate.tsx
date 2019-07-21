@@ -1,20 +1,18 @@
 import React from 'react';
 
-interface Props {
-  data: object;
-}
+type TdDateProps = {
+  date: string;
+};
 
-const TdDate: React.FunctionComponent<Props> = props => {
-  const { data }: { data: any } = props;
-  const previousDate = new Date(data);
-  const date =
+export function TdDate({ date }: TdDateProps) {
+  console.log(date);
+  const previousDate = new Date(date);
+  const previousDateFormated =
     previousDate.getDate() +
     1 +
     '-' +
     previousDate.getMonth() +
     '-' +
     previousDate.getFullYear();
-  return <td>{date}</td>;
-};
-
-export default TdDate;
+  return <td>{previousDateFormated}</td>;
+}
