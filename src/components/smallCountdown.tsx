@@ -4,7 +4,6 @@ import styled from 'styled-components';
 export function SmallCountdown(props: any) {
   const [dateNow, setDateNow] = useState(Math.floor(Date.now() / 1000));
   let interval = 0;
-  console.log(typeof props);
   const futureDate = props.futureDate;
 
   function tick() {

@@ -7,11 +7,7 @@ import TdDate from './tdDate';
 import TdPatch from './tdPatch';
 import { SmallCountdown } from '../../components/smallCountdown';
 
-interface Props {
-  data: object;
-}
-
-const FutureTable: React.FunctionComponent<Props> = props => {
+export function FutureTable(props) {
   const { data }: { data: any } = props;
 
   return (
@@ -51,9 +47,7 @@ const FutureTable: React.FunctionComponent<Props> = props => {
       </Table>
     </FutureTableStyle>
   );
-};
-
-export default FutureTable;
+}
 
 // Style
 const FutureTableStyle = styled.div`
