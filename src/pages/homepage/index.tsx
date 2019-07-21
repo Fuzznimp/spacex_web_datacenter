@@ -5,7 +5,7 @@ import upcomingLaunch from '../../graphql/queries/upcomingLaunch';
 import styled from 'styled-components';
 import { Spinner } from 'react-bootstrap';
 
-const Homepage = () => {
+export function Homepage() {
   return (
     <HomepageStyle>
       <Query query={upcomingLaunch}>
@@ -17,9 +17,7 @@ const Homepage = () => {
       </Query>
     </HomepageStyle>
   );
-};
-
-export default Homepage;
+}
 
 const HomepageStyle = styled.div`
   margin: 0 auto;
