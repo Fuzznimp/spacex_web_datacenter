@@ -4,7 +4,7 @@ import React from 'react';
 
 import { Td } from '../../components/table/td';
 import { TdDate } from '../../components/table/tdDate';
-import TdPatch from './tdPatch';
+import { TdPatch } from '../../components/table/tdPatch';
 import TdLanding from './tdLanding';
 import TdLaunch from './tdLaunch';
 
@@ -38,7 +38,7 @@ const PastTable: React.FunctionComponent<Props> = props => {
           {data.launches.map(launch => (
             <tr key={launch.flight_number}>
               <Td data={launch.flight_number} />
-              <TdPatch data={launch.links.mission_patch_small} />
+              <TdPatch patch={launch.links.mission_patch_small} />
               <TdDate date={launch.launch_date_utc} />
               <Td data={launch.mission_name} />
               <Td data={launch.rocket.rocket_name} />

@@ -4,7 +4,7 @@ import React from 'react';
 
 import { Td } from '../../components/table/td';
 import { TdDate } from '../../components/table/tdDate';
-import { TdPatch } from './tdPatch';
+import { TdPatch } from '../../components/table/tdPatch';
 import { SmallCountdown } from '../../components/smallCountdown';
 
 type FutureTableProps = {
