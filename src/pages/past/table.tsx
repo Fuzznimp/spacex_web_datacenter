@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Table } from 'react-bootstrap';
 import React from 'react';
 
-import Td from './td';
+import { Td } from '../../components/td';
 import TdDate from './tdDate';
 import TdPatch from './tdPatch';
 import TdLanding from './tdLanding';
@@ -43,9 +43,7 @@ const PastTable: React.FunctionComponent<Props> = props => {
               <Td data={launch.mission_name} />
               <Td data={launch.rocket.rocket_name} />
               <Td data={launch.launch_site.site_name} />
-              <TdLaunch
-                data={launch.launch_success}
-              />
+              <TdLaunch data={launch.launch_success} />
               <TdLanding
                 data={launch.rocket.first_stage.cores[0].land_success}
               />
