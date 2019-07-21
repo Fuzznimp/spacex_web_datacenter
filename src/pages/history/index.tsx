@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import history from '../../graphql/queries/history';
 import { Spinner } from 'react-bootstrap';
 
-import HistoryCardContainer from './cardContainer';
+import { HistoryCardContainer } from './cardContainer';
 
 export function History() {
   return (

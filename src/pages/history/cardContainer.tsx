@@ -4,12 +4,11 @@ import styled from 'styled-components';
 
 import { HistoryCard } from './card';
 
-interface Props {
-  data: object;
+interface HistoryCardContainerProps {
+  data: any;
 }
 
-const CardContainer: React.FunctionComponent<Props> = props => {
-  const { data }: { data: any } = props;
+export function HistoryCardContainer({ data }: HistoryCardContainerProps) {
   return (
     <CardDeckStyle>
       <CardDeck>
@@ -21,9 +20,7 @@ const CardContainer: React.FunctionComponent<Props> = props => {
       </CardDeck>
     </CardDeckStyle>
   );
-};
-
-export default CardContainer;
+}
 
 const CardDeckStyle = styled.div`
   .card-deck {
