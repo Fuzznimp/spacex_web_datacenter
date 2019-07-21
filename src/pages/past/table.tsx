@@ -43,7 +43,7 @@ const PastTable: React.FunctionComponent<Props> = props => {
               <Td data={launch.mission_name} />
               <Td data={launch.rocket.rocket_name} />
               <Td data={launch.launch_site.site_name} />
-              <TdLaunch data={launch.launch_success} />
+              <TdLaunch launchSuccess={launch.launch_success} />
               <TdLanding
                 data={launch.rocket.first_stage.cores[0].land_success}
               />
