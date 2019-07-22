@@ -563,7 +563,5 @@ type TrunkCargo {
   unpressurized_cargo: Boolean
 }
 
-# The `Upload` scalar type
- represents a file upload.
+# The `Upload` scalar type represents a file upload.
 scalar Upload
-
