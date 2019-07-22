@@ -18,4 +18,7 @@
 
 - Rocket show
 - Refactor Countdown component
+- Meteor wiggle timeout
+- Wrap REST API with GraphQL
+    - Remove `any` type from data props
 - ...
