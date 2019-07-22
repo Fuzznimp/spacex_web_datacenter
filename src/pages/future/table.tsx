@@ -37,7 +37,7 @@ export function FutureTable({ data }: FutureTableProps) {
         </thead>
         <tbody>
           {launches.map(launch => (
-            <tr key={launch.flight_number}>
+            <TableTr key={launch.flight_number}>
               <Td data={launch.flight_number} />
               <SmallCountdown futureDate={launch.launch_date_unix} />
               <TdDate date={launch.launch_date_utc} />
@@ -45,7 +45,7 @@ export function FutureTable({ data }: FutureTableProps) {
               <Td data={launch.rocket.rocket_name} />
               <Td data={launch.launch_site.site_name} />
               <TdPatch patch={launch.links.mission_patch_small} />
-            </tr>
+            </TableTr>
           ))}
         </tbody>
       </Table>
@@ -68,6 +68,18 @@ const FutureTableStyle = styled.div`
   tbody {
     overflow: scroll;
     height: 40%;
+  }
+`;
+
+const TableTr = styled.tr`
+  background-color: rgba(40, 40, 40, 0);
+
+  transition: background-color 1;
+  &:hover {
+    background-color: rgba(40, 40, 40, 0.6);
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
   }
 `;
 

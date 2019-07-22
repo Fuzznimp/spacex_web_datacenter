@@ -36,7 +36,7 @@ const PastTable: React.FunctionComponent<Props> = props => {
         </thead>
         <tbody>
           {data.launches.map(launch => (
-            <tr key={launch.flight_number}>
+            <TableTr key={launch.flight_number}>
               <Td data={launch.flight_number} />
               <TdPatch patch={launch.links.mission_patch_small} />
               <TdDate date={launch.launch_date_utc} />
@@ -47,7 +47,7 @@ const PastTable: React.FunctionComponent<Props> = props => {
               <TdLanding
                 landingSuccess={launch.rocket.first_stage.cores[0].land_success}
               />
-            </tr>
+            </TableTr>
           ))}
         </tbody>
       </Table>
@@ -72,6 +72,18 @@ const PastTableStyle = styled.div`
   tbody {
     overflow: scroll;
     height: 40%;
+  }
+`;
+
+const TableTr = styled.tr`
+  background-color: rgba(40, 40, 40, 0);
+
+  transition: background-color 1;
+  &:hover {
+    background-color: rgba(40, 40, 40, 0.6);
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
   }
 `;
 
