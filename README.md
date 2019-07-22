@@ -1,13 +1,20 @@
-## SpaceX Web Datacenter
+# SpaceX Web Datacenter
 
-A little app I did to train on TypeScript.
+`A little app I did to train on TypeScript.`
 
-# Special thanks to
+## Special thanks to
 
-Charles Omer for his GraphQL API
+- Charles Omer for his [GraphQL API](https://spacexdata.herokuapp.com/graphql)
 
-Ray Larable for his awesome font
+- Ray Larable for his awesome [font](http://typodermicfonts.com/nasalization)
 
-and above all
 
-SpaceX for their amazing API
+- SpaceX for their amazing [API](https://github.com/r-spacex/SpaceX-API)
+
+**WIP**
+
+### Todo list
+
+- Rocket show
+- Refactor Countdown component
+- ...
